@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>NOTES FROM PITTSBURGH</title>
+    <link>https://davidpassmore.github.io/blog/</link>
+    <atom:link href="https://davidpassmore.github.io/blog/op.xml" rel="self" type="application/rss+xml"/>
+    <description>NOTES from David L. Passmore, Pittsburgh, Pennsylvania USA
+</description>
+    <generator>Distill</generator>
+    <lastBuildDate>Sun, 30 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>dissecting the Fetterman-Oz flip in an information market</title>
+      <dc:creator>David L. Passmore</dc:creator>
+      <link>https://davidpassmore.github.io/blog/op/2022-10-28-inversion</link>
+      <description>Fetterman led in the race for election to the U.S. Senate for a long time. Then, Oz overtook Fetterman. How did the Predictit information market track this flip?</description>
+      <category>John Fetterman</category>
+      <category>Mehmet Oz</category>
+      <category>US Senate for PA 2022</category>
+      <category>midterm elections</category>
+      <category>information markets</category>
+      <category>Predictit</category>
+      <guid>https://davidpassmore.github.io/blog/op/2022-10-28-inversion</guid>
+      <pubDate>Sun, 30 Oct 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://davidpassmore.github.io/blog/op/2022-10-28-inversion/fetoz.png" medium="image" type="image/png" width="202" height="165"/>
+    </item>
+    <item>
+      <title>empathy: a letter to my friends</title>
+      <dc:creator>David L. Passmore</dc:creator>
+      <link>https://davidpassmore.github.io/blog/op/2022-09-22-empathy</link>
+      <description>A moral compass is needed to weigh into controversial and complex ethical issues.</description>
+      <category>empathy</category>
+      <category>immigration</category>
+      <category>Martha's Vineyard</category>
+      <category>Blade Runner</category>
+      <category>John Stuart Mill</category>
+      <category>The Intelligence Trap</category>
+      <category>Trumpism</category>
+      <guid>https://davidpassmore.github.io/blog/op/2022-09-22-empathy</guid>
+      <pubDate>Thu, 22 Sep 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://davidpassmore.github.io/blog/op/2022-09-22-empathy/rock-clipped.png" medium="image" type="image/png" width="399" height="433"/>
+    </item>
+    <item>
+      <title>information markets: alternatives to survey methods for estimating candidate preferences of the electorate</title>
+      <dc:creator>David L. Passmore</dc:creator>
+      <link>https://davidpassmore.github.io/blog/op/2022-08-17-decision-market</link>
+      <description>Information markets that operate like commodities future markets are cost-conscious alternatives to using survey methods for identifying beliefs, opinions, and voting expectations held by the electorate about candidates for public office.</description>
+      <category>decision markets</category>
+      <category>election polls</category>
+      <category>information aggregation</category>
+      <category>information markets</category>
+      <category>prediction markets</category>
+      <category>survey alternatives</category>
+      <category>survey methods</category>
+      <guid>https://davidpassmore.github.io/blog/op/2022-08-17-decision-market</guid>
+      <pubDate>Thu, 25 Aug 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://davidpassmore.github.io/blog/op/2022-08-17-decision-market/cover_election_2020_polls.png" medium="image" type="image/png" width="1000" height="628"/>
+    </item>
+    <item>
+      <title>understanding input-output modeling for assessing potential economic impact</title>
+      <dc:creator>David L. Passmore</dc:creator>
+      <link>https://davidpassmore.github.io/blog/op/2022-04-04-repoimplan</link>
+      <description>Maybe this dry, geeky essay won't shock your soul, but it describes input-output models, their assumptions, &amp; their uses for estimating economic impact of grand public investments.</description>
+      <category>economic impact</category>
+      <category>IMPLAN</category>
+      <category>Wassily Leontief</category>
+      <category>counterfactuals</category>
+      <category>input-output modeling</category>
+      <guid>https://davidpassmore.github.io/blog/op/2022-04-04-repoimplan</guid>
+      <pubDate>Tue, 12 Apr 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://davidpassmore.github.io/blog/op/2022-04-04-repoimplan/types-of-economic-impact.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>ostrich epistemology</title>
+      <dc:creator>David L. Passmore</dc:creator>
+      <link>https://davidpassmore.github.io/blog/op/2022-04-02-ostrich-epistemology</link>
+      <description>*Learning* involves *thinking*; its whetstone is *reasoning*; it requires intellectual *humility*, not arrogance. Learning, thinking, reasoning, and humility currently are in short supply, I assert, in this brief essay.</description>
+      <category>practical epistemology</category>
+      <category>openmindedness</category>
+      <category>learning</category>
+      <category>humility</category>
+      <guid>https://davidpassmore.github.io/blog/op/2022-04-02-ostrich-epistemology</guid>
+      <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://davidpassmore.github.io/blog/op/2022-04-02-ostrich-epistemology/headinsand.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>different numbers in, different numbers out</title>
+      <dc:creator>David L. Passmore</dc:creator>
+      <link>https://davidpassmore.github.io/blog/op/2022-04-25-different</link>
+      <description>A comparison of the validity of two contrasting studies of the potential economic impact of Marcellus Shale natural gas extraction ...published in 2011</description>
+      <category>natural gas development</category>
+      <category>jobs</category>
+      <category>income</category>
+      <category>Pennsylvania</category>
+      <category>industry contribution</category>
+      <category>internal validity</category>
+      <guid>https://davidpassmore.github.io/blog/op/2022-04-25-different</guid>
+      <pubDate>Fri, 07 Oct 2011 00:00:00 +0000</pubDate>
+      <media:content url="https://davidpassmore.net/blogd/img/marcellus_hydraulic.gif" medium="image" type="image/gif"/>
+    </item>
+  </channel>
+</rss>

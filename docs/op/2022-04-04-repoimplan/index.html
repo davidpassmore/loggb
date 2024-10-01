@@ -1,0 +1,3468 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+<style>
+  div.csl-bib-body { }
+  div.csl-entry {
+    clear: both;
+    }
+  .hanging div.csl-entry {
+    margin-left:2em;
+    text-indent:-2em;
+  }
+  div.csl-left-margin {
+    min-width:2em;
+    float:left;
+  }
+  div.csl-right-inline {
+    margin-left:2em;
+    padding-left:1em;
+  }
+  div.csl-indent {
+    margin-left: 2em;
+  }
+</style>
+
+  <!--radix_placeholder_meta_tags-->
+<title>NOTES FROM PITTSBURGH: understanding input-output modeling for assessing potential economic impact</title>
+
+<meta property="description" itemprop="description" content="Maybe this dry, geeky essay won&#39;t shock your soul, but it describes input-output models, their assumptions, &amp; their uses for estimating economic impact of grand public investments."/>
+
+<link rel="canonical" href="https://davidpassmore.github.io/blog/op/2022-04-04-repoimplan/"/>
+
+<!--  https://schema.org/Article -->
+<meta property="article:published" itemprop="datePublished" content="2022-04-12"/>
+<meta property="article:created" itemprop="dateCreated" content="2022-04-12"/>
+<meta name="article:author" content="David L. Passmore"/>
+
+<!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+<meta property="og:title" content="NOTES FROM PITTSBURGH: understanding input-output modeling for assessing potential economic impact"/>
+<meta property="og:type" content="article"/>
+<meta property="og:description" content="Maybe this dry, geeky essay won&#39;t shock your soul, but it describes input-output models, their assumptions, &amp; their uses for estimating economic impact of grand public investments."/>
+<meta property="og:url" content="https://davidpassmore.github.io/blog/op/2022-04-04-repoimplan/"/>
+<meta property="og:image" content="https://davidpassmore.github.io/blog/op/2022-04-04-repoimplan/types-of-economic-impact.jpg"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:site_name" content="NOTES FROM PITTSBURGH"/>
+
+<!--  https://dev.twitter.com/cards/types/summary -->
+<meta property="twitter:card" content="summary_large_image"/>
+<meta property="twitter:title" content="NOTES FROM PITTSBURGH: understanding input-output modeling for assessing potential economic impact"/>
+<meta property="twitter:description" content="Maybe this dry, geeky essay won&#39;t shock your soul, but it describes input-output models, their assumptions, &amp; their uses for estimating economic impact of grand public investments."/>
+<meta property="twitter:url" content="https://davidpassmore.github.io/blog/op/2022-04-04-repoimplan/"/>
+<meta property="twitter:image" content="https://davidpassmore.github.io/blog/op/2022-04-04-repoimplan/types-of-economic-impact.jpg"/>
+
+<!--  https://scholar.google.com/intl/en/scholar/inclusion.html#indexing -->
+<meta name="citation_title" content="NOTES FROM PITTSBURGH: understanding input-output modeling for assessing potential economic impact"/>
+<meta name="citation_fulltext_html_url" content="https://davidpassmore.github.io/blog/op/2022-04-04-repoimplan/"/>
+<meta name="citation_online_date" content="2022/04/12"/>
+<meta name="citation_publication_date" content="2022/04/12"/>
+<meta name="citation_author" content="David L. Passmore"/>
+<meta name="citation_author_institution" content="Distinguished Professor, Emeritus, Penn State; Academic Visitor, University of Pittsburgh"/>
+<!--/radix_placeholder_meta_tags-->
+  
+  <meta name="citation_reference" content="citation_title=The elements of input-output analysis;citation_publication_date=1965;citation_publisher=Regional Research Institute at The Research Repositoryat West Virginia University;citation_author=William Miernyk"/>
+  <meta name="citation_reference" content="citation_title=Gross domestic product | u.s. Bureau of economic analysis (BEA)"/>
+  <meta name="citation_reference" content="citation_title=Physical and monetary inputoutput analysis: What makes the difference?;citation_publication_date=2006;citation_volume=57;citation_doi=10.1016/j.ecolecon.2005.05.011;citation_author=Helga Weisz;citation_author=Faye Duchin"/>
+  <meta name="citation_reference" content="citation_title=The 1958 input-output study in analysis and forecasting;citation_publication_date=1965;citation_volume=1;citation_author=Morris R. Goldman"/>
+  <meta name="citation_reference" content="citation_title=Quantitative input and output relations in the economic systems of the united states;citation_publication_date=1936;citation_volume=18;citation_doi=10.2307/1927837;citation_author=Wassily Leontief"/>
+  <meta name="citation_reference" content="citation_title=Input-output economics;citation_publication_date=1966;citation_publisher=Oxford University Press;citation_author=Wassily Leontief"/>
+  <meta name="citation_reference" content="citation_title=The sveriges riksbank prize in economic sciences in memory of alfred nobel 1973"/>
+  <meta name="citation_reference" content="citation_title=Transparent polycrystalline cubic silicon nitride;citation_publication_date=2017;citation_volume=7;citation_doi=10.1038/srep44755;citation_author=Norimasa Nishiyama;citation_author=Ryo Ishikawa;citation_author=Hiroaki Ohfuji;citation_author=Hauke Marquardt;citation_author=Alexander Kurnosov;citation_author=Takashi Taniguchi;citation_author=Byung-Nam Kim;citation_author=Hidehiro Yoshida;citation_author=Atsunobu Masuno;citation_author=Jozef Bednarcik;citation_author=Eleonora Kulik;citation_author=Yuichi Ikuhara;citation_author=Fumihiro Wakai;citation_author=Tetsuo Irifune"/>
+  <meta name="citation_reference" content="citation_title=Ab urbe condita libri, iterum recognovit;citation_publication_date=1873;citation_publisher=Lipsiae, Teubner"/>
+  <meta name="citation_reference" content="citation_title=Causation;citation_publication_date=1974;citation_volume=70;citation_doi=10.2307/2025310;citation_author=David Lewis"/>
+  <meta name="citation_reference" content="citation_title=&quot;If lee had not won the battle of gettysburg&quot;;citation_publication_date=2014;citation_author=Winston Churchill"/>
+  <meta name="citation_reference" content="citation_title=If it had happened otherwise;citation_publication_date=1931;citation_publisher=Longman;citation_author=David Lewis"/>
+  <meta name="citation_reference" content="citation_title=The man in the high castle;citation_publication_date=1962;citation_publisher=Random House;citation_author=P. Dick"/>
+  <meta name="citation_reference" content="citation_title=The many sciences and the one world;citation_publication_date=1980;citation_volume=77;citation_doi=10.2307/2025803;citation_author=Geoffrey Joseph"/>
+  <meta name="citation_reference" content="citation_title=The truth doesn’t explain much;citation_publication_date=1980;citation_volume=17;citation_author=Nancy Cartwright"/>
+  <meta name="citation_reference" content="citation_title=Regional input-output modeling system (RIMS II) user’s guide | u.s. Bureau of economic analysis (BEA)"/>
+  <meta name="citation_reference" content="citation_title=The economic impact of NCMSDC certified minority businesses on northern california;citation_publication_date=2012;citation_author=Scott Vowels"/>
+  <meta name="citation_reference" content="citation_title=An Introduction to the National Income and Product Accounts;citation_publication_date=2007"/>
+  <meta name="citation_reference" content="citation_title=Economic Impact Studies: The Missing Ingredient Is Economics;citation_publication_date=2017"/>
+  <meta name="citation_reference" content="citation_title=NAICS code: 325193 ethyl alcohol manufacturing"/>
+  <meta name="citation_reference" content="citation_title=North american industry classification system (NAICS) u.s. Census bureau"/>
+  <meta name="citation_reference" content="citation_title=NAICS code: 311119 other animal food manufacturing"/>
+  <meta name="citation_reference" content="citation_title=Nonsense with big numbers: how to get legislators to support your industry;citation_publication_date=2015;citation_author=Jon Sanders"/>
+  <meta name="citation_reference" content="citation_title=Selected Essays on Political Economy. translated by Seymour Cain and edited by George B. de Huszar;citation_publication_date=1964;citation_publisher=Van Nostrand.;citation_author=Frédéric Bastiat"/>
+  <meta name="citation_reference" content="citation_title=Regional InputOutput Analysis;citation_publication_date=2005;citation_publisher=Elsevier;citation_doi=10.1016/B0-12-369398-5/00349-2;citation_author=Eveline S. Leeuwen;citation_author=Peter Nijkamp;citation_author=Piet Rietveld"/>
+  <meta name="citation_reference" content="citation_title=Economic Impact Studies: The Missing Ingredient Is Economics;citation_publication_date=2017"/>
+  <meta name="citation_reference" content="citation_title=Updated Economic Impact Analysis: Petrochemical Facility in Beaver County, Pennsylvania;citation_publication_date=2021;citation_author=Steven Clinton;citation_author=Marcel C Minutolo;citation_author=Brian O’Roark"/>
+  <meta name="citation_reference" content="citation_title=Location and tax breaks key to shell’s pennsylvania cracker plant approval | reuters events | downstream"/>
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+<script type="text/json" id="radix-rmarkdown-metadata">
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","preview","author","date","categories","output","editor_options","bibliography","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["understanding input-output modeling for assessing potential economic impact"]},{"type":"character","attributes":{},"value":["Maybe this dry, geeky essay won't shock your soul, but it describes input-output models, their assumptions, & their uses for estimating economic impact of grand public investments."]},{"type":"character","attributes":{},"value":["types-of-economic-impact.jpg"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","orcid_id","affiliation"]}},"value":[{"type":"character","attributes":{},"value":["David L. Passmore"]},{"type":"character","attributes":{},"value":["https://davidpassmore.net"]},{"type":"character","attributes":{},"value":["0000-0001-9307-5164"]},{"type":"character","attributes":{},"value":["Distinguished Professor, Emeritus, Penn State; Academic Visitor, University of Pittsburgh"]}]}]},{"type":"character","attributes":{},"value":["2022-04-12"]},{"type":"character","attributes":{},"value":["economic impact","IMPLAN","Wassily Leontief","counterfactuals","input-output modeling"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc-depth"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[5]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["markdown"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["wrap"]}},"value":[{"type":"integer","attributes":{},"value":[72]}]}]},{"type":"character","attributes":{},"value":["references.bib"]},{"type":"character","attributes":{},"value":["https://davidpassmore.github.io/blog/op/2022-04-04-repoimplan/"]},{"type":"character","attributes":{},"value":["https://davidpassmore.github.io/blog/op/2022-04-04-repoimplan/"]}]}
+</script>
+<!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["Airport-economic-impact-analysis-model-Source-Colorado-Department-of-Transportation.ppm","economicsdescript.jpg","impact_dist.jpeg","references.bib","repoimplan_files/anchor-4.2.2/anchor.min.js","repoimplan_files/bowser-1.9.3/bowser.min.js","repoimplan_files/distill-2.2.21/template.v2.js","repoimplan_files/header-attrs-2.13/header-attrs.js","repoimplan_files/jquery-3.6.0/jquery-3.6.0.js","repoimplan_files/jquery-3.6.0/jquery-3.6.0.min.js","repoimplan_files/jquery-3.6.0/jquery-3.6.0.min.map","repoimplan_files/popper-2.6.0/popper.min.js","repoimplan_files/tippy-6.2.7/tippy-bundle.umd.min.js","repoimplan_files/tippy-6.2.7/tippy-light-border.css","repoimplan_files/tippy-6.2.7/tippy.css","repoimplan_files/tippy-6.2.7/tippy.umd.min.js","repoimplan_files/webcomponents-2.0.0/webcomponents.js","types-of-economic-impact.jpg","wide_blue_analysis.jpeg","wide_blue_analysis1.jpeg"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+<meta name="distill:offset" content="../.."/>
+
+<script type="application/javascript">
+
+  window.headroom_prevent_pin = false;
+
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+
+    // initialize headroom for banner
+    var header = $('header').get(0);
+    var headerHeight = header.offsetHeight;
+    var headroom = new Headroom(header, {
+      tolerance: 5,
+      onPin : function() {
+        if (window.headroom_prevent_pin) {
+          window.headroom_prevent_pin = false;
+          headroom.unpin();
+        }
+      }
+    });
+    headroom.init();
+    if(window.location.hash)
+      headroom.unpin();
+    $(header).addClass('headroom--transition');
+
+    // offset scroll location for banner on hash change
+    // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+    window.addEventListener("hashchange", function(event) {
+      window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+    });
+
+    // responsive menu
+    $('.distill-site-header').each(function(i, val) {
+      var topnav = $(this);
+      var toggle = topnav.find('.nav-toggle');
+      toggle.on('click', function() {
+        topnav.toggleClass('responsive');
+      });
+    });
+
+    // nav dropdowns
+    $('.nav-dropbtn').click(function(e) {
+      $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+      $(this).parent().siblings('.nav-dropdown')
+         .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $("body").click(function(e){
+      $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $(".nav-dropdown").click(function(e){
+      e.stopPropagation();
+    });
+  });
+</script>
+
+<style type="text/css">
+
+/* Theme (user-documented overrideables for nav appearance) */
+
+.distill-site-nav {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #0F2E3D;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.distill-site-nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.distill-site-nav a:hover {
+  color: white;
+}
+
+@media print {
+  .distill-site-nav {
+    display: none;
+  }
+}
+
+.distill-site-header {
+
+}
+
+.distill-site-footer {
+
+}
+
+
+/* Site Header */
+
+.distill-site-header {
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+.distill-site-header .nav-left {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header .nav-left {
+    margin-left: 0;
+  }
+}
+
+
+.distill-site-header .nav-right {
+  float: right;
+  margin-right: 8px;
+}
+
+.distill-site-header a,
+.distill-site-header .title {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 10px 14px 10px;
+}
+
+.distill-site-header .title {
+  font-size: 18px;
+  min-width: 150px;
+}
+
+.distill-site-header .logo {
+  padding: 0;
+}
+
+.distill-site-header .logo img {
+  display: none;
+  max-height: 20px;
+  width: auto;
+  margin-bottom: -4px;
+}
+
+.distill-site-header .nav-image img {
+  max-height: 18px;
+  width: auto;
+  display: inline-block;
+  margin-bottom: -3px;
+}
+
+
+
+@media screen and (min-width: 1000px) {
+  .distill-site-header .logo img {
+    display: inline-block;
+  }
+  .distill-site-header .nav-left {
+    margin-left: 20px;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 20px;
+  }
+  .distill-site-header .title {
+    padding-left: 12px;
+  }
+}
+
+
+.distill-site-header .nav-toggle {
+  display: none;
+}
+
+.nav-dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.nav-dropdown .nav-dropbtn {
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 16px 10px;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  margin-top: 1px;
+  z-index: 2;
+}
+
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  z-index: 1;
+  margin-top: 2px;
+  white-space: nowrap;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.nav-dropdown-content hr {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-dropdown-active {
+  display: block;
+}
+
+.nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+  color: black;
+  padding: 6px 24px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.nav-dropdown-content .nav-dropdown-header {
+  display: block;
+  padding: 5px 24px;
+  padding-bottom: 0;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #999999;
+  white-space: nowrap;
+}
+
+.nav-dropdown:hover .nav-dropbtn {
+  color: white;
+}
+
+.nav-dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.nav-right .nav-dropdown-content {
+  margin-left: -45%;
+  right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
+  .distill-site-header a.nav-toggle {
+    float: right;
+    display: block;
+  }
+  .distill-site-header .title {
+    margin-left: 0;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 0;
+  }
+  .distill-site-header {
+    overflow: hidden;
+  }
+  .nav-right .nav-dropdown-content {
+    margin-left: 0;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-header.responsive {position: relative; min-height: 500px; }
+  .distill-site-header.responsive a.nav-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .distill-site-header.responsive a,
+  .distill-site-header.responsive .nav-dropdown {
+    display: block;
+    text-align: left;
+  }
+  .distill-site-header.responsive .nav-left,
+  .distill-site-header.responsive .nav-right {
+    width: 100%;
+  }
+  .distill-site-header.responsive .nav-dropdown {float: none;}
+  .distill-site-header.responsive .nav-dropdown-content {position: relative;}
+  .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Site Footer */
+
+.distill-site-footer {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 3;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+/* Headroom */
+
+d-title {
+  padding-top: 6rem;
+}
+
+@media print {
+  d-title {
+    padding-top: 4rem;
+  }
+}
+
+.headroom {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.headroom--transition {
+  transition: all .4s ease-in-out;
+}
+
+.headroom--unpinned {
+  top: -100px;
+}
+
+.headroom--pinned {
+  top: 0;
+}
+
+/* adjust viewport for navbar height */
+/* helps vertically center bootstrap (non-distill) content */
+.min-vh-100 {
+  min-height: calc(100vh - 100px) !important;
+}
+
+</style>
+
+<script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="../../site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet"/>
+<script src="../../site_libs/headroom-0.9.4/headroom.min.js"></script>
+<script src="../../site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
+<script src="../../site_libs/fuse-6.4.1/fuse.min.js"></script>
+
+<script type="application/javascript">
+
+function getMeta(metaName) {
+  var metas = document.getElementsByTagName('meta');
+  for (let i = 0; i < metas.length; i++) {
+    if (metas[i].getAttribute('name') === metaName) {
+      return metas[i].getAttribute('content');
+    }
+  }
+  return '';
+}
+
+function offsetURL(url) {
+  var offset = getMeta('distill:offset');
+  return offset ? offset + '/' + url : url;
+}
+
+function createFuseIndex() {
+
+  // create fuse index
+  var options = {
+    keys: [
+      { name: 'title', weight: 20 },
+      { name: 'categories', weight: 15 },
+      { name: 'description', weight: 10 },
+      { name: 'contents', weight: 5 },
+    ],
+    ignoreLocation: true,
+    threshold: 0
+  };
+  var fuse = new window.Fuse([], options);
+
+  // fetch the main search.json
+  return fetch(offsetURL('search.json'))
+    .then(function(response) {
+      if (response.status == 200) {
+        return response.json().then(function(json) {
+          // index main articles
+          json.articles.forEach(function(article) {
+            fuse.add(article);
+          });
+          // download collections and index their articles
+          return Promise.all(json.collections.map(function(collection) {
+            return fetch(offsetURL(collection)).then(function(response) {
+              if (response.status === 200) {
+                return response.json().then(function(articles) {
+                  articles.forEach(function(article) {
+                    fuse.add(article);
+                  });
+                })
+              } else {
+                return Promise.reject(
+                  new Error('Unexpected status from search index request: ' +
+                            response.status)
+                );
+              }
+            });
+          })).then(function() {
+            return fuse;
+          });
+        });
+
+      } else {
+        return Promise.reject(
+          new Error('Unexpected status from search index request: ' +
+                      response.status)
+        );
+      }
+    });
+}
+
+window.document.addEventListener("DOMContentLoaded", function (event) {
+
+  // get search element (bail if we don't have one)
+  var searchEl = window.document.getElementById('distill-search');
+  if (!searchEl)
+    return;
+
+  createFuseIndex()
+    .then(function(fuse) {
+
+      // make search box visible
+      searchEl.classList.remove('hidden');
+
+      // initialize autocomplete
+      var options = {
+        autoselect: true,
+        hint: false,
+        minLength: 2,
+      };
+      window.autocomplete(searchEl, options, [{
+        source: function(query, callback) {
+          const searchOptions = {
+            isCaseSensitive: false,
+            shouldSort: true,
+            minMatchCharLength: 2,
+            limit: 10,
+          };
+          var results = fuse.search(query, searchOptions);
+          callback(results
+            .map(function(result) { return result.item; })
+          );
+        },
+        templates: {
+          suggestion: function(suggestion) {
+            var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
+              ? `<img src="${offsetURL(suggestion.preview)}"</img>`
+              : '';
+            var html = `
+              <div class="search-item">
+                <h3>${suggestion.title}</h3>
+                <div class="search-item-description">
+                  ${suggestion.description || ''}
+                </div>
+                <div class="search-item-preview">
+                  ${img}
+                </div>
+              </div>
+            `;
+            return html;
+          }
+        }
+      }]).on('autocomplete:selected', function(event, suggestion) {
+        window.location.href = offsetURL(suggestion.path);
+      });
+      // remove inline display style on autocompleter (we want to
+      // manage responsive display via css)
+      $('.algolia-autocomplete').css("display", "");
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+
+});
+
+</script>
+
+<style type="text/css">
+
+.nav-search {
+  font-size: x-small;
+}
+
+/* Algolioa Autocomplete */
+
+.algolia-autocomplete {
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: sub;
+  background-color: white;
+  color: black;
+  padding: 6px;
+  padding-top: 8px;
+  padding-bottom: 0;
+  border-radius: 6px;
+  border: 1px #0F2E3D solid;
+  width: 180px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-nav .algolia-autocomplete {
+    display: none;
+    visibility: hidden;
+  }
+  .distill-site-nav.responsive .algolia-autocomplete {
+    display: inline-block;
+    visibility: visible;
+  }
+  .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
+    margin-left: 0;
+    width: 400px;
+    max-height: 400px;
+  }
+}
+
+.algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
+  width: 90%;
+  outline: none;
+  border: none;
+}
+
+.algolia-autocomplete .aa-hint {
+  color: #999;
+}
+.algolia-autocomplete .aa-dropdown-menu {
+  width: 550px;
+  max-height: 70vh;
+  overflow-x: visible;
+  overflow-y: scroll;
+  padding: 5px;
+  margin-top: 3px;
+  margin-left: -150px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #999;
+  border-top: none;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+  cursor: pointer;
+  padding: 5px 4px;
+  border-bottom: 1px solid #eee;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
+  border-bottom: none;
+  margin-bottom: 2px;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
+  overflow: hidden;
+  font-size: 0.8em;
+  line-height: 1.4em;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
+  font-size: 1rem;
+  margin-block-start: 0;
+  margin-block-end: 5px;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
+  display: inline-block;
+  overflow: hidden;
+  height: 2.8em;
+  width: 80%;
+  margin-right: 4%;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
+  display: inline-block;
+  width: 15%;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
+  height: 3em;
+  width: auto;
+  display: none;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
+  display: initial;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+  background-color: #eee;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+  font-weight: bold;
+  font-style: normal;
+}
+
+</style>
+
+
+<!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+<style type="text/css">
+
+body {
+  background-color: white;
+}
+
+.pandoc-table {
+  width: 100%;
+}
+
+.pandoc-table>caption {
+  margin-bottom: 10px;
+}
+
+.pandoc-table th:not([align]) {
+  text-align: left;
+}
+
+.pagedtable-footer {
+  font-size: 15px;
+}
+
+d-byline .byline {
+  grid-template-columns: 2fr 2fr;
+}
+
+d-byline .byline h3 {
+  margin-block-start: 1.5em;
+}
+
+d-byline .byline .authors-affiliations h3 {
+  margin-block-start: 0.5em;
+}
+
+.authors-affiliations .orcid-id {
+  width: 16px;
+  height:16px;
+  margin-left: 4px;
+  margin-right: 4px;
+  vertical-align: middle;
+  padding-bottom: 2px;
+}
+
+d-title .dt-tags {
+  margin-top: 1em;
+  grid-column: text;
+}
+
+.dt-tags .dt-tag {
+  text-decoration: none;
+  display: inline-block;
+  color: rgba(0,0,0,0.6);
+  padding: 0em 0.4em;
+  margin-right: 0.5em;
+  margin-bottom: 0.4em;
+  font-size: 70%;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+d-article table.gt_table td,
+d-article table.gt_table th {
+  border-bottom: none;
+  font-size: 100%;
+}
+
+.html-widget {
+  margin-bottom: 2.0em;
+}
+
+.l-screen-inset {
+  padding-right: 16px;
+}
+
+.l-screen .caption {
+  margin-left: 10px;
+}
+
+.shaded {
+  background: rgb(247, 247, 247);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .html-widget {
+  margin-bottom: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .shaded-content {
+  background: white;
+}
+
+.text-output {
+  margin-top: 0;
+  line-height: 1.5em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+hr.section-separator {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0px;
+}
+
+
+d-byline {
+  border-top: none;
+}
+
+d-article {
+  padding-top: 2.5rem;
+  padding-bottom: 30px;
+  border-top: none;
+}
+
+d-appendix {
+  padding-top: 30px;
+}
+
+d-article>p>img {
+  width: 100%;
+}
+
+d-article h2 {
+  margin: 1rem 0 1.5rem 0;
+}
+
+d-article h3 {
+  margin-top: 1.5rem;
+}
+
+d-article iframe {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 2.0em;
+  width: 100%;
+}
+
+/* Tweak code blocks */
+
+d-article div.sourceCode code,
+d-article pre code {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+d-article pre,
+d-article div.sourceCode,
+d-article div.sourceCode pre {
+  overflow: auto;
+}
+
+d-article div.sourceCode {
+  background-color: white;
+}
+
+d-article div.sourceCode pre {
+  padding-left: 10px;
+  font-size: 12px;
+  border-left: 2px solid rgba(0,0,0,0.1);
+}
+
+d-article pre {
+  font-size: 12px;
+  color: black;
+  background: none;
+  margin-top: 0;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+d-article pre a {
+  border-bottom: none;
+}
+
+d-article pre a:hover {
+  border-bottom: none;
+  text-decoration: underline;
+}
+
+d-article details {
+  grid-column: text;
+  margin-bottom: 0.8em;
+}
+
+@media(min-width: 768px) {
+
+d-article pre,
+d-article div.sourceCode,
+d-article div.sourceCode pre {
+  overflow: visible !important;
+}
+
+d-article div.sourceCode pre {
+  padding-left: 18px;
+  font-size: 14px;
+}
+
+/* tweak for Pandoc numbered line within distill */
+d-article pre.numberSource code > span {
+    left: -2em;
+}
+
+d-article pre {
+  font-size: 14px;
+}
+
+}
+
+figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+/* CSS for d-contents */
+
+.d-contents {
+  grid-column: text;
+  color: rgba(0,0,0,0.8);
+  font-size: 0.9em;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+  padding-left: 0.25em;
+  justify-self: start;
+}
+
+@media(min-width: 1000px) {
+  .d-contents.d-contents-float {
+    height: 0;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    justify-self: center;
+    padding-right: 3em;
+    padding-left: 2em;
+  }
+}
+
+.d-contents nav h3 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.d-contents li {
+  list-style-type: none
+}
+
+.d-contents nav > ul {
+  padding-left: 0;
+}
+
+.d-contents ul {
+  padding-left: 1em
+}
+
+.d-contents nav ul li {
+  margin-top: 0.6em;
+  margin-bottom: 0.2em;
+}
+
+.d-contents nav a {
+  font-size: 13px;
+  border-bottom: none;
+  text-decoration: none
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.d-contents nav a:hover {
+  text-decoration: underline solid rgba(0, 0, 0, 0.6)
+}
+
+.d-contents nav > ul > li > a {
+  font-weight: 600;
+}
+
+.d-contents nav > ul > li > ul {
+  font-weight: inherit;
+}
+
+.d-contents nav > ul > li > ul > li {
+  margin-top: 0.2em;
+}
+
+
+.d-contents nav ul {
+  margin-top: 0;
+  margin-bottom: 0.25em;
+}
+
+.d-article-with-toc h2:nth-child(2) {
+  margin-top: 0;
+}
+
+
+/* Figure */
+
+.figure {
+  position: relative;
+  margin-bottom: 2.5em;
+  margin-top: 1.5em;
+}
+
+.figure .caption {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  line-height: 1.5em;
+}
+
+.figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+.figure .caption a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.figure .caption b,
+.figure .caption strong, {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 1.0);
+}
+
+/* Citations */
+
+d-article .citation {
+  color: inherit;
+  cursor: inherit;
+}
+
+div.hanging-indent{
+  margin-left: 1em; text-indent: -1em;
+}
+
+/* Citation hover box */
+
+.tippy-box[data-theme~=light-border] {
+  background-color: rgba(250, 250, 250, 0.95);
+}
+
+.tippy-content > p {
+  margin-bottom: 0;
+  padding: 2px;
+}
+
+
+/* Tweak 1000px media break to show more text */
+
+@media(min-width: 1000px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 16px;
+  }
+
+  .grid {
+    grid-column-gap: 16px;
+  }
+
+  d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+  }
+  figure .caption, .figure .caption, figure figcaption {
+    font-size: 13px;
+  }
+}
+
+@media(min-width: 1180px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 32px;
+  }
+
+  .grid {
+    grid-column-gap: 32px;
+  }
+}
+
+
+/* Get the citation styles for the appendix (not auto-injected on render since
+   we do our own rendering of the citation appendix) */
+
+d-appendix .citation-appendix,
+.d-appendix .citation-appendix {
+  font-size: 11px;
+  line-height: 15px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding-left: 18px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.02);
+  padding: 10px 18px;
+  border-radius: 3px;
+  color: rgba(150, 150, 150, 1);
+  overflow: hidden;
+  margin-top: -12px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Include appendix styles here so they can be overridden */
+
+d-appendix {
+  contain: layout style;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-top: 60px;
+  margin-bottom: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: rgba(0,0,0,0.5);
+  padding-top: 60px;
+  padding-bottom: 48px;
+}
+
+d-appendix h3 {
+  grid-column: page-start / text-start;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 1em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.65);
+}
+
+d-appendix h3 + * {
+  margin-top: 1em;
+}
+
+d-appendix ol {
+  padding: 0 0 0 15px;
+}
+
+@media (min-width: 768px) {
+  d-appendix ol {
+    padding: 0 0 0 30px;
+    margin-left: -30px;
+  }
+}
+
+d-appendix li {
+  margin-bottom: 1em;
+}
+
+d-appendix a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+d-appendix > * {
+  grid-column: text;
+}
+
+d-appendix > d-footnote-list,
+d-appendix > d-citation-list,
+d-appendix > distill-appendix {
+  grid-column: screen;
+}
+
+/* Include footnote styles here so they can be overridden */
+
+d-footnote-list {
+  contain: layout style;
+}
+
+d-footnote-list > * {
+  grid-column: text;
+}
+
+d-footnote-list a.footnote-backlink {
+  color: rgba(0,0,0,0.3);
+  padding-left: 0.5em;
+}
+
+
+
+/* Anchor.js */
+
+.anchorjs-link {
+  /*transition: all .25s linear; */
+  text-decoration: none;
+  border-bottom: none;
+}
+*:hover > .anchorjs-link {
+  margin-left: -1.125em !important;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+/* Social footer */
+
+.social_footer {
+  margin-top: 30px;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.67);
+}
+
+.disqus-comments {
+  margin-right: 30px;
+}
+
+.disqus-comment-count {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+#disqus_thread {
+  margin-top: 30px;
+}
+
+.article-sharing a {
+  border-bottom: none;
+  margin-right: 8px;
+}
+
+.article-sharing a:hover {
+  border-bottom: none;
+}
+
+.sidebar-section.subscribe {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.subscribe p {
+  margin-bottom: 0.5em;
+}
+
+
+.article-footer .subscribe {
+  font-size: 15px;
+  margin-top: 45px;
+}
+
+
+.sidebar-section.custom {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.custom p {
+  margin-bottom: 0.5em;
+}
+
+/* Styles for listing layout (hide title) */
+.layout-listing d-title, .layout-listing .d-title {
+  display: none;
+}
+
+/* Styles for posts lists (not auto-injected) */
+
+
+.posts-with-sidebar {
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+.posts-list .description h2,
+.posts-list .description p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+.posts-list .description h2 {
+  font-weight: 700;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.posts-list h2.post-tag {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 12px;
+}
+.posts-list {
+  margin-top: 60px;
+  margin-bottom: 24px;
+}
+
+.posts-list .post-preview {
+  text-decoration: none;
+  overflow: hidden;
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 24px 0;
+}
+
+.post-preview-last {
+  border-bottom: none !important;
+}
+
+.posts-list .posts-list-caption {
+  grid-column: screen;
+  font-weight: 400;
+}
+
+.posts-list .post-preview h2 {
+  margin: 0 0 6px 0;
+  line-height: 1.2em;
+  font-style: normal;
+  font-size: 24px;
+}
+
+.posts-list .post-preview p {
+  margin: 0 0 12px 0;
+  line-height: 1.4em;
+  font-size: 16px;
+}
+
+.posts-list .post-preview .thumbnail {
+  box-sizing: border-box;
+  margin-bottom: 24px;
+  position: relative;
+  max-width: 500px;
+}
+.posts-list .post-preview img {
+  width: 100%;
+  display: block;
+}
+
+.posts-list .metadata {
+  font-size: 12px;
+  line-height: 1.4em;
+  margin-bottom: 18px;
+}
+
+.posts-list .metadata > * {
+  display: inline-block;
+}
+
+.posts-list .metadata .publishedDate {
+  margin-right: 2em;
+}
+
+.posts-list .metadata .dt-authors {
+  display: block;
+  margin-top: 0.3em;
+  margin-right: 2em;
+}
+
+.posts-list .dt-tags {
+  display: block;
+  line-height: 1em;
+}
+
+.posts-list .dt-tags .dt-tag {
+  display: inline-block;
+  color: rgba(0,0,0,0.6);
+  padding: 0.3em 0.4em;
+  margin-right: 0.2em;
+  margin-bottom: 0.4em;
+  font-size: 60%;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.posts-list img {
+  opacity: 1;
+}
+
+.posts-list img[data-src] {
+  opacity: 0;
+}
+
+.posts-more {
+  clear: both;
+}
+
+
+.posts-sidebar {
+  font-size: 16px;
+}
+
+.posts-sidebar h3 {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.sidebar-section {
+  margin-bottom: 30px;
+}
+
+.categories ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.categories li {
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 0;
+}
+
+.categories li>a {
+  border-bottom: none;
+}
+
+.categories li>a:hover {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.categories .active {
+  font-weight: 600;
+}
+
+.categories .category-count {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+
+@media(min-width: 768px) {
+  .posts-list .post-preview h2 {
+    font-size: 26px;
+  }
+  .posts-list .post-preview .thumbnail {
+    float: right;
+    width: 30%;
+    margin-bottom: 0;
+  }
+  .posts-list .post-preview .description {
+    float: left;
+    width: 45%;
+  }
+  .posts-list .post-preview .metadata {
+    float: left;
+    width: 20%;
+    margin-top: 8px;
+  }
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.5em;
+    font-size: 16px;
+  }
+  .posts-with-sidebar .posts-list {
+    float: left;
+    width: 75%;
+  }
+  .posts-with-sidebar .posts-sidebar {
+    float: right;
+    width: 20%;
+    margin-top: 60px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+
+/* Improve display for browsers without grid (IE/Edge <= 15) */
+
+.downlevel {
+  line-height: 1.6em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+}
+
+.downlevel .d-title {
+  padding-top: 6rem;
+  padding-bottom: 1.5rem;
+}
+
+.downlevel .d-title h1 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.1em;
+  margin: 0 0 0.5rem;
+}
+
+.downlevel .d-title p {
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.55em;
+  margin-top: 0;
+}
+
+.downlevel .d-byline {
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  font-size: 0.8rem;
+  line-height: 1.8em;
+}
+
+.downlevel .section-separator {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.downlevel .d-article {
+  font-size: 1.06rem;
+  line-height: 1.7em;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+
+.downlevel .d-appendix {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: none;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.5);
+  padding-top: 40px;
+  padding-bottom: 48px;
+}
+
+.downlevel .footnotes ol {
+  padding-left: 13px;
+}
+
+.downlevel .base-grid,
+.downlevel .distill-header,
+.downlevel .d-title,
+.downlevel .d-abstract,
+.downlevel .d-article,
+.downlevel .d-appendix,
+.downlevel .distill-appendix,
+.downlevel .d-byline,
+.downlevel .d-footnote-list,
+.downlevel .d-citation-list,
+.downlevel .distill-footer,
+.downlevel .appendix-bottom,
+.downlevel .posts-container {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media(min-width: 768px) {
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+  padding-left: 150px;
+  padding-right: 150px;
+  max-width: 900px;
+}
+}
+
+.downlevel pre code {
+  display: block;
+  border-left: 2px solid rgba(0, 0, 0, .1);
+  padding: 0 0 0 20px;
+  font-size: 14px;
+}
+
+.downlevel code, .downlevel pre {
+  color: black;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+.downlevel .posts-list .post-preview {
+  color: inherit;
+}
+
+
+
+</style>
+
+<script type="application/javascript">
+
+function is_downlevel_browser() {
+  if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                 window.navigator.userAgent)) {
+    return true;
+  } else {
+    return window.load_distill_framework === undefined;
+  }
+}
+
+// show body when load is complete
+function on_load_complete() {
+
+  // add anchors
+  if (window.anchors) {
+    window.anchors.options.placement = 'left';
+    window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+  }
+
+
+  // set body to visible
+  document.body.style.visibility = 'visible';
+
+  // force redraw for leaflet widgets
+  if (window.HTMLWidgets) {
+    var maps = window.HTMLWidgets.findAll(".leaflet");
+    $.each(maps, function(i, el) {
+      var map = this.getMap();
+      map.invalidateSize();
+      map.eachLayer(function(layer) {
+        if (layer instanceof L.TileLayer)
+          layer.redraw();
+      });
+    });
+  }
+
+  // trigger 'shown' so htmlwidgets resize
+  $('d-article').trigger('shown');
+}
+
+function init_distill() {
+
+  init_common();
+
+  // create front matter
+  var front_matter = $('<d-front-matter></d-front-matter>');
+  $('#distill-front-matter').wrap(front_matter);
+
+  // create d-title
+  $('.d-title').changeElementType('d-title');
+
+  // separator
+  var separator = '<hr class="section-separator" style="clear: both"/>';
+  // prepend separator above appendix
+  $('.d-byline').before(separator);
+  $('.d-article').before(separator);
+
+  // create d-byline
+  var byline = $('<d-byline></d-byline>');
+  $('.d-byline').replaceWith(byline);
+
+  // create d-article
+  var article = $('<d-article></d-article>');
+  $('.d-article').wrap(article).children().unwrap();
+
+  // move posts container into article
+  $('.posts-container').appendTo($('d-article'));
+
+  // create d-appendix
+  $('.d-appendix').changeElementType('d-appendix');
+
+  // flag indicating that we have appendix items
+  var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+  // replace footnotes with <d-footnote>
+  $('.footnote-ref').each(function(i, val) {
+    appendix = true;
+    var href = $(this).attr('href');
+    var id = href.replace('#', '');
+    var fn = $('#' + id);
+    var fn_p = $('#' + id + '>p');
+    fn_p.find('.footnote-back').remove();
+    var text = fn_p.html();
+    var dtfn = $('<d-footnote></d-footnote>');
+    dtfn.html(text);
+    $(this).replaceWith(dtfn);
+  });
+  // remove footnotes
+  $('.footnotes').remove();
+
+  // move refs into #references-listing
+  $('#references-listing').replaceWith($('#refs'));
+
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    var id = $(this).attr('id');
+    $('.d-contents a[href="#' + id + '"]').parent().remove();
+    appendix = true;
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+  });
+
+  // show d-appendix if we have appendix content
+  $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+  // localize layout chunks to just output
+  $('.layout-chunk').each(function(i, val) {
+
+    // capture layout
+    var layout = $(this).attr('data-layout');
+
+    // apply layout to markdown level block elements
+    var elements = $(this).children().not('details, div.sourceCode, pre, script');
+    elements.each(function(i, el) {
+      var layout_div = $('<div class="' + layout + '"></div>');
+      if (layout_div.hasClass('shaded')) {
+        var shaded_content = $('<div class="shaded-content"></div>');
+        $(this).wrap(shaded_content);
+        $(this).parent().wrap(layout_div);
+      } else {
+        $(this).wrap(layout_div);
+      }
+    });
+
+
+    // unwrap the layout-chunk div
+    $(this).children().unwrap();
+  });
+
+  // remove code block used to force  highlighting css
+  $('.distill-force-highlighting-css').parent().remove();
+
+  // remove empty line numbers inserted by pandoc when using a
+  // custom syntax highlighting theme, except when numbering line
+  // in code chunk
+  $('pre:not(.numberLines) code.sourceCode a:empty').remove();
+
+  // load distill framework
+  load_distill_framework();
+
+  // wait for window.distillRunlevel == 4 to do post processing
+  function distill_post_process() {
+
+    if (!window.distillRunlevel || window.distillRunlevel < 4)
+      return;
+
+    // hide author/affiliations entirely if we have no authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+    if (!have_authors)
+      $('d-byline').addClass('hidden');
+
+    // article with toc class
+    $('.d-contents').parent().addClass('d-article-with-toc');
+
+    // strip links that point to #
+    $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+    // add orcid ids
+    $('.authors-affiliations').find('.author').each(function(i, el) {
+      var orcid_id = front_matter.authors[i].orcidID;
+      var author_name = front_matter.authors[i].author
+      if (orcid_id) {
+        var a = $('<a></a>');
+        a.attr('href', 'https://orcid.org/' + orcid_id);
+        var img = $('<img></img>');
+        img.addClass('orcid-id');
+        img.attr('alt', author_name ? 'ORCID ID for ' + author_name : 'ORCID ID');
+        img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+        a.append(img);
+        $(this).append(a);
+      }
+    });
+
+    // hide elements of author/affiliations grid that have no value
+    function hide_byline_column(caption) {
+      $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+    }
+
+    // affiliations
+    var have_affiliations = false;
+    for (var i = 0; i<front_matter.authors.length; ++i) {
+      var author = front_matter.authors[i];
+      if (author.affiliation !== "&nbsp;") {
+        have_affiliations = true;
+        break;
+      }
+    }
+    if (!have_affiliations)
+      $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+    // published date
+    if (!front_matter.publishedDate)
+      hide_byline_column("Published");
+
+    // document object identifier
+    var doi = $('d-byline').find('h3:contains("DOI")');
+    var doi_p = doi.next().empty();
+    if (!front_matter.doi) {
+      // if we have a citation and valid citationText then link to that
+      if ($('#citation').length > 0 && front_matter.citationText) {
+        doi.html('Citation');
+        $('<a href="#citation"></a>')
+          .text(front_matter.citationText)
+          .appendTo(doi_p);
+      } else {
+        hide_byline_column("DOI");
+      }
+    } else {
+      $('<a></a>')
+         .attr('href', "https://doi.org/" + front_matter.doi)
+         .html(front_matter.doi)
+         .appendTo(doi_p);
+    }
+
+     // change plural form of authors/affiliations
+    if (front_matter.authors.length === 1) {
+      var grid = $('.authors-affiliations');
+      grid.children('h3:contains("Authors")').text('Author');
+      grid.children('h3:contains("Affiliations")').text('Affiliation');
+    }
+
+    // remove d-appendix and d-footnote-list local styles
+    $('d-appendix > style:first-child').remove();
+    $('d-footnote-list > style:first-child').remove();
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // hoverable references
+    $('span.citation[data-cites]').each(function() {
+      const citeChild = $(this).children()[0]
+      // Do not process if @xyz has been used without escaping and without bibliography activated
+      // https://github.com/rstudio/distill/issues/466
+      if (citeChild === undefined) return true
+
+      if (citeChild.nodeName == "D-FOOTNOTE") {
+        var fn = citeChild
+        $(this).html(fn.shadowRoot.querySelector("sup"))
+        $(this).id = fn.id
+        fn.remove()
+      }
+      var refs = $(this).attr('data-cites').split(" ");
+      var refHtml = refs.map(function(ref) {
+        // Could use CSS.escape too here, we insure backward compatibility in navigator
+        return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
+      }).join("\n");
+      window.tippy(this, {
+        allowHTML: true,
+        content: refHtml,
+        maxWidth: 500,
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'light-border',
+        placement: 'bottom-start'
+      });
+    });
+
+    // fix footnotes in tables (#411)
+    // replacing broken distill.pub feature
+    $('table d-footnote').each(function() {
+      // we replace internal showAtNode methode which is triggered when hovering a footnote
+      this.hoverBox.showAtNode = function(node) {
+        // ported from https://github.com/distillpub/template/pull/105/files
+        calcOffset = function(elem) {
+            let x = elem.offsetLeft;
+            let y = elem.offsetTop;
+            // Traverse upwards until an `absolute` element is found or `elem`
+            // becomes null.
+            while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                x += elem.offsetLeft;
+                y += elem.offsetTop;
+            }
+
+            return { left: x, top: y };
+        }
+        // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+        const bbox = node.getBoundingClientRect();
+        const offset = calcOffset(node);
+        this.show([offset.left + bbox.width, offset.top + bbox.height]);
+      }
+    })
+
+    // clear polling timer
+    clearInterval(tid);
+
+    // show body now that everything is ready
+    on_load_complete();
+  }
+
+  var tid = setInterval(distill_post_process, 50);
+  distill_post_process();
+
+}
+
+function init_downlevel() {
+
+  init_common();
+
+   // insert hr after d-title
+  $('.d-title').after($('<hr class="section-separator"/>'));
+
+  // check if we have authors
+  var front_matter = JSON.parse($("#distill-front-matter").html());
+  var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+  // manage byline/border
+  if (!have_authors)
+    $('.d-byline').remove();
+  $('.d-byline').after($('<hr class="section-separator"/>'));
+  $('.d-byline a').remove();
+
+  // remove toc
+  $('.d-contents').remove();
+
+  // move appendix elements
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+  });
+
+
+  // inject headers into references and footnotes
+  var refs_header = $('<h3></h3>');
+  refs_header.text('References');
+  $('#refs').prepend(refs_header);
+
+  var footnotes_header = $('<h3></h3');
+  footnotes_header.text('Footnotes');
+  $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+  // move appendix-bottom entries to the bottom
+  $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+  $('.appendix-bottom').remove();
+
+  // remove appendix if it's empty
+  if ($('.d-appendix').children().length === 0)
+    $('.d-appendix').remove();
+
+  // prepend separator above appendix
+  $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+  // trim code
+  $('pre>code').each(function(i, val) {
+    $(this).html($.trim($(this).html()));
+  });
+
+  // move posts-container right before article
+  $('.posts-container').insertBefore($('.d-article'));
+
+  $('body').addClass('downlevel');
+
+  on_load_complete();
+}
+
+
+function init_common() {
+
+  // jquery plugin to change element types
+  (function($) {
+    $.fn.changeElementType = function(newType) {
+      var attrs = {};
+
+      $.each(this[0].attributes, function(idx, attr) {
+        attrs[attr.nodeName] = attr.nodeValue;
+      });
+
+      this.replaceWith(function() {
+        return $("<" + newType + "/>", attrs).append($(this).contents());
+      });
+    };
+  })(jQuery);
+
+  // prevent underline for linked images
+  $('a > img').parent().css({'border-bottom' : 'none'});
+
+  // mark non-body figures created by knitr chunks as 100% width
+  $('.layout-chunk').each(function(i, val) {
+    var figures = $(this).find('img, .html-widget');
+    // ignore leaflet img layers (#106)
+    figures = figures.filter(':not(img[class*="leaflet"])')
+    if ($(this).attr('data-layout') !== "l-body") {
+      figures.css('width', '100%');
+    } else {
+      figures.css('max-width', '100%');
+      figures.filter("[width]").each(function(i, val) {
+        var fig = $(this);
+        fig.css('width', fig.attr('width') + 'px');
+      });
+
+    }
+  });
+
+  // auto-append index.html to post-preview links in file: protocol
+  // and in rstudio ide preview
+  $('.post-preview').each(function(i, val) {
+    if (window.location.protocol === "file:")
+      $(this).attr('href', $(this).attr('href') + "index.html");
+  });
+
+  // get rid of index.html references in header
+  if (window.location.protocol !== "file:") {
+    $('.distill-site-header a[href]').each(function(i,val) {
+      $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
+    });
+  }
+
+  // add class to pandoc style tables
+  $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+  $('.kable-table').children('table').addClass('pandoc-table');
+
+  // add figcaption style to table captions
+  $('caption').parent('table').addClass("figcaption");
+
+  // initialize posts list
+  if (window.init_posts_list)
+    window.init_posts_list();
+
+  // implmement disqus comment link
+  $('.disqus-comment-count').click(function() {
+    window.headroom_prevent_pin = true;
+    $('#disqus_thread').toggleClass('hidden');
+    if (!$('#disqus_thread').hasClass('hidden')) {
+      var offset = $(this).offset();
+      $(window).resize();
+      $('html, body').animate({
+        scrollTop: offset.top - 35
+      });
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (is_downlevel_browser())
+    init_downlevel();
+  else
+    window.addEventListener('WebComponentsReady', init_distill);
+});
+
+</script>
+
+<style type="text/css">
+/* base variables */
+
+/* Edit the CSS properties in this file to create a custom
+   Distill theme. Only edit values in the right column
+   for each row; values shown are the CSS defaults.
+   To return any property to the default,
+   you may set its value to: unset
+   All rows must end with a semi-colon.                      */
+
+/* Optional: embed custom fonts here with `@import`          */
+/* This must remain at the top of this file.                 */
+
+
+
+html {
+  /*-- Main font sizes --*/
+  --title-size:      50px;
+  --body-size:       1.06rem;
+  --code-size:       14px;
+  --aside-size:      12px;
+  --fig-cap-size:    13px;
+  /*-- Main font colors --*/
+  --title-color:     #000000;
+  --header-color:    rgba(0, 0, 0, 0.8);
+  --body-color:      rgba(0, 0, 0, 0.8);
+  --aside-color:     rgba(0, 0, 0, 0.6);
+  --fig-cap-color:   rgba(0, 0, 0, 0.6);
+  /*-- Specify custom fonts ~~~ must be imported above   --*/
+  --heading-font:    sans-serif;
+  --mono-font:       monospace;
+  --body-font:       sans-serif;
+  --navbar-font:     sans-serif;  /* websites + blogs only */
+}
+
+/*-- ARTICLE METADATA --*/
+d-byline {
+  --heading-size:    0.6rem;
+  --heading-color:   rgba(0, 0, 0, 0.5);
+  --body-size:       0.8rem;
+  --body-color:      rgba(0, 0, 0, 0.8);
+}
+
+/*-- ARTICLE TABLE OF CONTENTS --*/
+.d-contents {
+  --heading-size:    18px;
+  --contents-size:   13px;
+}
+
+/*-- ARTICLE APPENDIX --*/
+d-appendix {
+  --heading-size:    15px;
+  --heading-color:   rgba(0, 0, 0, 0.65);
+  --text-size:       0.8em;
+  --text-color:      rgba(0, 0, 0, 0.5);
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+/* These properties only apply to Distill sites and blogs  */
+
+.distill-site-header {
+  --title-size:       18px;
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+.distill-site-footer {
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+/*-- Additional custom styles --*/
+/* Add any additional CSS rules below                      */
+</style>
+<style type="text/css">@import url('https://fonts.googleapis.com/css2?family=Amiri');
+@import url('https://fonts.googleapis.com/css2?family=Bitter');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono');
+.distill-site-header {
+  --title-size:       26px;    
+  --text-color:       #CCCCCC; /* edited */
+  --text-size:        17px;
+  --hover-color:      #FFFFFF; /* edited */
+  --bkgd-color:       #000000; /* edited */
+}
+html {
+  /*-- Main font sizes --*/
+  --heading-font:    "Amiri", serif;
+  --mono-font:       "DM Mono", monospace;
+  --body-font:       "Bitter", sans-serif;
+  --navbar-font:     "Amiri", serif;
+  --title-size:      35px;
+  --text-color:     #000000;
+  --body-size:       1.15rem;
+  --code-size:       14px;
+  --aside-size:      12px;
+  --fig-cap-size:    15px;
+  /*-- More properties --*/
+  ...
+}</style>
+<style type="text/css">
+/* base style */
+
+/* FONT FAMILIES */
+
+:root {
+  --heading-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono-default: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  --body-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+body,
+.posts-list .post-preview p,
+.posts-list .description p {
+  font-family: var(--body-font), var(--body-default);
+}
+
+h1, h2, h3, h4, h5, h6,
+.posts-list .post-preview h2,
+.posts-list .description h2 {
+  font-family: var(--heading-font), var(--heading-default);
+}
+
+d-article div.sourceCode code,
+d-article pre code {
+  font-family: var(--mono-font), var(--mono-default);
+}
+
+
+/*-- TITLE --*/
+d-title h1,
+.posts-list > h1 {
+  color: var(--title-color, black);
+}
+
+d-title h1 {
+  font-size: var(--title-size, 50px);
+}
+
+/*-- HEADERS --*/
+d-article h1,
+d-article h2,
+d-article h3,
+d-article h4,
+d-article h5,
+d-article h6 {
+  color: var(--header-color, rgba(0, 0, 0, 0.8));
+}
+
+/*-- BODY --*/
+d-article > p,  /* only text inside of <p> tags */
+d-article > ul, /* lists */
+d-article > ol {
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+  font-size: var(--body-size, 1.06rem);
+}
+
+
+/*-- CODE --*/
+d-article div.sourceCode code,
+d-article pre code {
+  font-size: var(--code-size, 14px);
+}
+
+/*-- ASIDE --*/
+d-article aside {
+  font-size: var(--aside-size, 12px);
+  color: var(--aside-color, rgba(0, 0, 0, 0.6));
+}
+
+/*-- FIGURE CAPTIONS --*/
+figure .caption,
+figure figcaption,
+.figure .caption {
+  font-size: var(--fig-cap-size, 13px);
+  color: var(--fig-cap-color, rgba(0, 0, 0, 0.6));
+}
+
+/*-- METADATA --*/
+d-byline h3 {
+  font-size: var(--heading-size, 0.6rem);
+  color: var(--heading-color, rgba(0, 0, 0, 0.5));
+}
+
+d-byline {
+  font-size: var(--body-size, 0.8rem);
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+}
+
+d-byline a,
+d-article d-byline a {
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+}
+
+/*-- TABLE OF CONTENTS --*/
+.d-contents nav h3 {
+  font-size: var(--heading-size, 18px);
+}
+
+.d-contents nav a {
+  font-size: var(--contents-size, 13px);
+}
+
+/*-- APPENDIX --*/
+d-appendix h3 {
+  font-size: var(--heading-size, 15px);
+  color: var(--heading-color, rgba(0, 0, 0, 0.65));
+}
+
+d-appendix {
+  font-size: var(--text-size, 0.8em);
+  color: var(--text-color, rgba(0, 0, 0, 0.5));
+}
+
+d-appendix d-footnote-list a.footnote-backlink {
+  color: var(--text-color, rgba(0, 0, 0, 0.5));
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+.distill-site-header .title {
+  font-size: var(--title-size, 18px);
+  font-family: var(--navbar-font), var(--heading-default);
+}
+
+.distill-site-header a,
+.nav-dropdown .nav-dropbtn {
+  font-family: var(--navbar-font), var(--heading-default);
+}
+
+.nav-dropdown .nav-dropbtn {
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  font-size: var(--text-size, 15px);
+}
+
+.distill-site-header a:hover,
+.nav-dropdown:hover .nav-dropbtn {
+  color: var(--hover-color, white);
+}
+
+.distill-site-header {
+  font-size: var(--text-size, 15px);
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  background-color: var(--bkgd-color, #0F2E3D);
+}
+
+.distill-site-footer {
+  font-size: var(--text-size, 15px);
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  background-color: var(--bkgd-color, #0F2E3D);
+}
+
+.distill-site-footer a:hover {
+  color: var(--hover-color, white);
+}</style>
+<!--/radix_placeholder_distill-->
+  <script src="../../site_libs/header-attrs-2.13/header-attrs.js"></script>
+  <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
+  <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="../../site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="../../site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="../../site_libs/anchor-4.2.2/anchor.min.js"></script>
+  <script src="../../site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="../../site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="../../site_libs/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+<!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"understanding input-output modeling for assessing potential economic impact","description":"Maybe this dry, geeky essay won't shock your soul, but it describes input-output models, their assumptions, & their uses for estimating economic impact of grand public investments.","authors":[{"author":"David L. Passmore","authorURL":"https://davidpassmore.net","affiliation":"Distinguished Professor, Emeritus, Penn State; Academic Visitor, University of Pittsburgh","affiliationURL":"#","orcidID":"0000-0001-9307-5164"}],"publishedDate":"2022-04-12T00:00:00.000-04:00","citationText":"Passmore, 2022"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="distill-site-nav distill-site-header">
+<div class="nav-left">
+<span class="logo">
+<img src="../../smallDLP.jpg"/>
+</span>
+<a href="../../index.html" class="title">NOTES FROM PITTSBURGH</a>
+<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
+</div>
+<div class="nav-right">
+<a href="../../about.html">| about these notes |</a>
+<div class="nav-dropdown">
+<button class="nav-dropbtn">
+| lists of notes |
+ 
+<span class="down-arrow">&#x25BE;</span>
+</button>
+<div class="nav-dropdown-content">
+<a href="../../ec.html">economy/workforce</a>
+<a href="../../lm.html">energy/environment</a>
+<a href="../../mem.html">global matters</a>
+<a href="../../op.html">methods</a>
+</div>
+</div>
+<a href="../../me.html">| brief bio |</a>
+<a href="../../index.xml">
+<i class="fa fa-rss" aria-hidden="true"></i>
+</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>understanding input-output modeling for assessing potential economic impact</h1>
+<!--radix_placeholder_categories-->
+<div class="dt-tags">
+  <a href="../../op.html#category:economic_impact" class="dt-tag">economic impact</a>
+  <a href="../../op.html#category:IMPLAN" class="dt-tag">IMPLAN</a>
+  <a href="../../op.html#category:Wassily_Leontief" class="dt-tag">Wassily Leontief</a>
+  <a href="../../op.html#category:counterfactuals" class="dt-tag">counterfactuals</a>
+  <a href="../../op.html#category:input-output_modeling" class="dt-tag">input-output modeling</a>
+</div>
+<!--/radix_placeholder_categories-->
+<p><p>Maybe this dry, geeky essay won’t shock your soul, but it
+describes input-output models, their assumptions, &amp; their uses for
+estimating economic impact of grand public investments.</p></p>
+</div>
+
+<div class="d-byline">
+  David L. Passmore <a href="https://davidpassmore.net"
+class="uri">https://davidpassmore.net</a> (Distinguished Professor,
+Emeritus, Penn State; Academic Visitor, University of Pittsburgh)
+  
+<br/>2022-04-12
+</div>
+
+<div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#specification-of-the-input-output-model">Specification of
+the Input-Output Model</a></li>
+<li><a
+href="#use-of-counterfactuals-to-identify-potential-economic-impact">Use
+of Counterfactuals to Identify Potential Economic Impact</a></li>
+<li><a
+href="#selected-software-and-systems-for-input-output-modeling">Selected
+Software and Systems for Input-Output Modeling</a></li>
+<li><a href="#last-updated-on">Last updated on</a></li>
+<li><a href="#reuse">Reuse</a></li>
+<li><a href="#commentscorrections">Comments/Corrections</a></li>
+</ul>
+</nav>
+</div>
+<p>Input-output modeling is a data-based, computational, and often
+prospective approach to unwinding the impact of projects, events, and
+changes in local economies. An input-output model accounts for goods and
+services that are required as <em>inputs</em> by industries to produce
+<em>outputs</em> of goods and services necessary to satisfy supply
+requirements for inputs to other industries and delivery directly to
+consumers <span class="citation" data-cites="miernyk1965">(<a
+href="#ref-miernyk1965" role="doc-biblioref">Miernyk
+1965</a>)</span>.</p>
+<p>Input-output modeling is a way to measure the effects of a project,
+program, activity, or event on the structure or conditions of economic
+life in a country, area, or period. Use of input-output modeling is
+pervasive in the assessment of economic impact. However, this modeling
+technique often is misapplied and debauched by various rakehells of
+academia and consulting to fulfill patently politically-motivated
+spending of public funds. For these reasons, understanding the ways and
+means of input-output modeling is essential for weighing critically any
+assertions about economic impact.<a href="#fn1" class="footnote-ref"
+id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>In this paper, I outline the details of the input-output model and
+its assumptions, outline common uses (and some concerns about abuses) of
+the model to estimate potential economic impact, and list selected
+software and systems available for input-output modeling. In doing so, I
+do not get into any depth in the vast literature on input-output
+modeling. Nor do I establish a critical or skeptical stance about this
+modeling or its uses. For the most part, I offer in this blog posting a
+technical description, unadorned by advocacy or patronage, of
+input-output modeling. I will refer to the technical base offered in
+this blog posting to support my reviews and commentaries about a variety
+of economic impact reports that I will make in other blog postings.</p>
+<h3 id="specification-of-the-input-output-model">Specification of the
+Input-Output Model</h3>
+<h4 id="production-and-consumption">Production and Consumption</h4>
+<p>Consider an economy with <span class="math inline">\(I\)</span>
+producing industries and <span class="math inline">\(J\)</span>
+purchasing industries, where <span class="math inline">\(I = J\)</span>.
+Some of the output of industry <span class="math inline">\(i\)</span> is
+sold to industry <span class="math inline">\(j\)</span> for use in its
+own production.</p>
+<p>Let <span class="math inline">\(\textbf{X}\)</span> stand for a
+square matrix of transactions among industries, with elements <span
+class="math inline">\(x_{ij}\)</span> containing the dollar value of
+goods and services sold by producing industry <span
+class="math inline">\(i\)</span> to purchasing industry <span
+class="math inline">\(j\)</span>. Sales of the product of industry <span
+class="math inline">\(i\)</span> to itself — that is, <span
+class="math inline">\(x_{i=j}\)</span> — are possible. For instance, the
+coal industry also might purchase coal for use in its own production
+processes.</p>
+<p>Output of industry <span class="math inline">\(i\)</span> not
+purchased by industries for their own production instead is sold
+directly to consumers to meet demands for personal consumption in
+households, government purchases of defense and non-defense goods and
+services, fixed investments such as housing and other structures, and
+exports net of imports. Let <span
+class="math inline">\(\textbf{y}\)</span> represent an <span
+class="math inline">\(I\)</span>–length vector whose elements display
+the dollar value of goods and services delivered by producing industry
+<span class="math inline">\(i\)</span> to fulfill final demands of the
+economy for personal consumption, government purchases, fixed
+investments, and net exports. Vector <span
+class="math inline">\(\textbf{y}\)</span> represents the “final demand”
+for goods and services in an economy and is known commonly in the
+parlance of national income and product accounting practice as <em>gross
+domestic product</em> <span class="citation" data-cites="grossdo">(<a
+href="#ref-grossdo" role="doc-biblioref"><span>“Gross Domestic Product |
+u.s. Bureau of Economic Analysis (BEA),”</span> n.d.</a>)</span>.</p>
+<h4 id="direct-requirements">Direct Requirements</h4>
+<p>Quantities in an input–output model most commonly are expressed as
+monetary values (e.g., as dollars, rubles, yuan, or some other form of
+currency used as a medium of exchange) rather than as quantities of
+goods and services, although some energy and resource input–output
+models are scaled in physical quantities such as megawatts of
+electricity, kilograms of waste, hectares of land, or liters of water
+<span class="citation" data-cites="weisz2006">(<a href="#ref-weisz2006"
+role="doc-biblioref">Weisz and Duchin 2006</a>)</span>.</p>
+<p>The production sector of the economy, then is defined by <span
+class="math inline">\(\textbf{X}\)</span>, and <span
+class="math inline">\(\textbf{y}\)</span> is the consumption sector. The
+total output of the economy by producing industry, contained in <span
+class="math inline">\(I\)</span>–length vector <span
+class="math inline">\(\textbf{x}\)</span>,<a href="#fn2"
+class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> is
+equal to the sum of production and consumption, or</p>
+<p><span class="math display">\[
+\begin{equation}
+\tag{1}
+\textbf{x}=\textbf{X}+\textbf{y}.
+\end {equation}
+\]</span></p>
+<p>Define <span class="math inline">\(\textbf{A}\)</span>, a direct
+requirements matrix with elements <span
+class="math inline">\(a_{ij}=x_{ij}/x_{j}\)</span> showing the
+proportion of industry <span class="math inline">\(i\)</span> output
+required for production by industry <span
+class="math inline">\(j\)</span>. Equation (1) now becomes</p>
+<p><span class="math display">\[
+\begin{equation}
+\tag{2}
+\textbf{x}= \textbf{Ax} + \textbf{y}.
+\end{equation}
+\]</span></p>
+<h5 id="some-assumptions-about-requirements">Some Assumptions About
+Requirements</h5>
+<p>Assumptions undergird all models, which are not the entity itself but
+are an abstraction of particular features of interest. Accordingly,
+input-output models rest on important assumptions that simplify and
+complicate…both at the same time.</p>
+<p>Elements in <span class="math inline">\(\textbf{A}\)</span> are
+assumed to be fixed, homogeneous, and linear within purchasing
+industries. I dwell on these assumptions because they are at the very
+core of the operation as well as the credibility of input-output
+modeling.</p>
+<p><em>Fixed</em></p>
+<p>Inputs required by purchasing industry <span
+class="math inline">\(j\)</span> from producing industry <span
+class="math inline">\(i\)</span> do not change over time. More
+technically, zero elasticity of price or quantity substitution exists
+among inputs to purchasing industry <span
+class="math inline">\(j\)</span>. Increasing or decreasing industry
+<em>j</em> output requires increasing or decreasing industry <em>i</em>
+inputs in the same proportion. “In other words,” according to the Bureau
+of Economic Research for the U.S. Department of Commerce,<span
+class="citation" data-cites="regional">(<a href="#ref-regional"
+role="doc-biblioref"><span>“Regional Input-Output Modeling System (RIMS
+II) User’s Guide | u.s. Bureau of Economic Analysis (BEA),”</span>
+n.d.</a>)</span> “…businesses can use as many inputs as needed without
+facing higher prices.” An implication is that no bottlenecks in supply
+are recognized in static input-output models, even though economic
+difficulties during the COVID-19 pandemic show that supply constraints
+are a disruptive fact of economic life. In these ways, coefficients in
+<span class="math inline">\(\textbf{A}\)</span> are assumed to be
+<em>fixed</em>.</p>
+<p><em>Homogeneous</em></p>
+<p><em>All</em> firms and establishments in purchasing industry <span
+class="math inline">\(j\)</span> use the same, fixed proportion of
+industry <span class="math inline">\(i\)</span> inputs. That is, no
+variation exists in resource and product markets within an industry.
+Same suppliers; same customers; same technology of production. Every
+producer in an industry does the same thing and is affected by market
+forces in the same way. In this sense, industries are rendered
+<em>homogeneous</em> in input-output modeling.</p>
+<p>An aside about terminology and classification applicable to the the
+assumption of homogeneity of industries in input-output modelings:<a
+href="#fn3" class="footnote-ref" id="fnref3"
+role="doc-noteref"><sup>3</sup></a> </p>
+<ol type="1">
+<li><p>A fundamental rule followed in most input-output modeling is that
+the least common denominator of analysis occurs the level of an
+<em>industry</em>, which is an aggregation of activity by highly similar
+goods or services and business activity, and not by firm or within
+establishments run by firms. Industry output is produced by
+<em>firms</em>, which are for-profit business organizations, such as a
+corporations, limited liability companies, or partnership. A number of
+firms can contribute to an <em>industry</em>. As I shall explain in the
+next item in this side discussion, industries are not mutually exclusive
+collections of firms. Separate industries might include some of the same
+firms. Also, firms might own or manage multiple establishments at which
+industry production occurs. An <em>establishment</em> is a single
+location where business is conducted or where services/operations are
+performed.<a href="#fn4" class="footnote-ref" id="fnref4"
+role="doc-noteref"><sup>4</sup></a> In general, the production flow
+moves from establishments within firms and, then, to
+industries.</p></li>
+<li><p>To add complexity to the input-output accounting scheme, some
+firms produce multiple goods and services that are classifiable in
+multiple industries. For instance, the production of food-safe,
+non-denatured alcohol distilled from grain<a href="#fn5"
+class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> is
+accounted as output of the <em>Denatured Alcohol Manufacturing
+Industry</em> (NAICS<a href="#fn6" class="footnote-ref" id="fnref6"
+role="doc-noteref"><sup>6</sup></a> 325193, <span class="citation"
+data-cites="naicsco">(<a href="#ref-naicsco"
+role="doc-biblioref"><span>“NAICS Code: 325193 Ethyl Alcohol
+Manufacturing,”</span> n.d.</a>)</span>). Grain remaining after
+distillation is a co-product<a href="#fn7" class="footnote-ref"
+id="fnref7" role="doc-noteref"><sup>7</sup></a> product of denatured
+alcohol manufacturing and could be classified as a product of the
+<em>Other Animal Food Manufacturing Industry</em> (NAICS 311119, <span
+class="citation" data-cites="naicscoa">(<a href="#ref-naicscoa"
+role="doc-biblioref"><span>“NAICS Code: 311119 Other Animal Food
+Manufacturing,”</span> n.d.</a>)</span>). One single process, two
+separate products.</p></li>
+<li><p>An economy is understood as an open system that can gain or lose
+income or products from outside its boundaries through trade. Moreover,
+any aggregations such as firms, cities, geopolitical regions, countries,
+or the entire world could form the boundaries of an economy examined. As
+described the <em>Encyclopedia of Social Measurement</em> <span
+class="citation" data-cites="vanleeuwen2005">(<a
+href="#ref-vanleeuwen2005" role="doc-biblioref">Leeuwen, Nijkamp, and
+Rietveld 2005</a>)</span>, large, diversified economies producing many
+goods and services can demonstrate large economic impacts because (a) a
+large region can fulfill its demand for goods and services from within
+the region, (b) transportation of goods and services with the region is
+simpler than hauling in these resources, and (c) economic activity in
+large region tends to agglomerate sales to surrounding regions. For
+these reasons, specification of the kind and level of aggregation of
+industry data can have a profound effect on an assessment of economic
+impact.</p></li>
+</ol>
+<p><em>Linear</em></p>
+<p>Neither economies nor diseconomies of scale occur as producing
+industry <span class="math inline">\(j\)</span> output increases or
+decreases (i.e., <em>linear</em>). Also, this assumption implies that
+scale – and the institutional knowledge aggregated from collective work
+– has no bearing on the dollar value of resources required for
+production or for the functioning of the product market.</p>
+<h5 id="are-these-assumptions-realistic">Are These Assumptions
+Realistic?</h5>
+<p>How correct are these assumptions? How important even is
+verisimilitude of the assumptions with reality?</p>
+<p>These three assumptions – fixed, homogeneous, linear – about the
+nature of direct input-output requirements are, of course, highly
+restrictive and probably are unrealistic attributes to assign to most
+economies. In spite of that, many analysts choose to believe that these
+assumptions have proved tenable within limits and useful for economic
+analysis in static contexts, even without adding additional complexity
+to expand the simple model represented by equation (2). Rather, the use
+of the model often rests on the verisimilitude of its assumptions with
+reality. Many analysts have relied on the pragmatic view that these
+assumptions are close enough to short-term reality to allow answers to
+economic problems that do not lend themselves to other analytic
+techniques <span class="citation" data-cites="goldman1965">(<a
+href="#ref-goldman1965" role="doc-biblioref">Goldman
+1965</a>)</span>.</p>
+<p>The John Locke Foundation is one critic of common input-output
+modeling applications. The Foundation asserts <span class="citation"
+data-cites="economic2017">(<a href="#ref-economic2017"
+role="doc-biblioref"><span>“Economic Impact Studies: The Missing
+Ingredient Is Economics”</span> 2017a</a>)</span> that many modeling
+efforts fail to consider <em>opportunity costs</em> – that is, forgone
+benefits that could accrue from an option not chosen. Most studies using
+input-output analysis only consider benefits of a project, but fail to
+consider or model the costs of a project.</p>
+<p>Of course, any new economic activity viewed without costs always will
+demonstrate unalloyed benefits. Something is larger than nothing, right?
+The “big-benefits-with-few-costs” approach is quite compelling to
+legislators, policy-makers, and funding agencies seeking to convince the
+public that projects, events, or changes are indispensable for economic
+growth and community revitalization <span class="citation"
+data-cites="sanders2015">(<a href="#ref-sanders2015"
+role="doc-biblioref">Sanders 2015</a>)</span>. The John Locke Foundation
+asserts that input-output modeling is so often conducted “by
+professional consulting firms who are hired by interest groups to do the
+studies. Furthermore, seldom do those who actually perform the studies
+have formal training in economics. Instead their expertise is in
+using…proprietary [input-output] models <span class="citation"
+data-cites="economic2017a">(<a href="#ref-economic2017a"
+role="doc-biblioref"><span>“Economic Impact Studies: The Missing
+Ingredient Is Economics”</span> 2017b</a>)</span>”.</p>
+<p>Ignoring opportunity costs and other modes of failure to think ahead
+to consider full economic consequences prompted Frédéric Bastiat, French
+economist best known for his journalistic writing in favor of free trade
+and the economics of Adam Smith, wrote in his last published pamphlet in
+1850 that:</p>
+<blockquote>
+<p>In the economic sphere an act, a habit, an institution, a law
+produces not only one effect, but a series of effects. Of these effects,
+the first alone is immediate; it appears simultaneously with its cause;
+it is seen. The other effects emerge only subsequently; they are not
+seen; we are fortunate if we foresee them.</p>
+</blockquote>
+<blockquote>
+<p>There is only one difference between a bad economist and a good one:
+the bad economist confines himself to the visible effect; the good
+economist takes into account both the effect that can be seen and those
+effects that must be foreseen <span class="citation"
+data-cites="bastiat1964">(<a href="#ref-bastiat1964"
+role="doc-biblioref">Bastiat 1964</a>)</span>.</p>
+</blockquote>
+<p>I do not mean to ignore these importance of these assumptions and
+criticisms of them. I will take up these matters directly as I review
+reports of economic impact in other postings on this blog.</p>
+<h4
+id="indirect-and-then-total-requirements-the-leontief-inverse">Indirect
+and, then, Total Requirements (The Leontief Inverse)</h4>
+<p>Introducing for mathematical convenience an <span
+class="math inline">\(I x J\)</span> identity matrix, <span
+class="math inline">\(\textbf{I}\)</span>, and algebraically rearranging
+terms in equation (2), the relationships among production, consumption
+and economic output is expressed as</p>
+<p><span class="math display">\[
+\begin{equation}
+\tag{3}
+\textbf{x}=(\textbf{I} - \textbf{A})^{-1}\textbf{y},
+\end{equation}
+\]</span></p>
+<p>where <span class="math inline">\((\textbf{I} -
+\textbf{A})^{-1}\)</span> is called a <em>total requirements matrix</em>
+that shows the additional dollar value of output from industry <span
+class="math inline">\(i\)</span> needed directly or indirectly to
+deliver a dollar’s worth of output from industry <span
+class="math inline">\(j\)</span> to final demand in the economy. The
+matrix inverse, <span class="math inline">\((\textbf{I} -
+\textbf{A})^{-1}\)</span>, often is described as the <em>Leontief
+Inverse</em>,<a href="#fn8" class="footnote-ref" id="fnref8"
+role="doc-noteref"><sup>8</sup></a> in honor of Wassily Leontief <span
+class="citation" data-cites="leontief1936a leontief1966c">(<a
+href="#ref-leontief1936a" role="doc-biblioref">Leontief 1936</a>, <a
+href="#ref-leontief1966c" role="doc-biblioref">1966</a>)</span>, an
+economist who won the Nobel Memorial Prize in Economic Sciences in 1973
+for developing economic input–output analysis theory and methods <span
+class="citation" data-cites="thesver">(<a href="#ref-thesver"
+role="doc-biblioref"><span>“The Sveriges Riksbank Prize in Economic
+Sciences in Memory of Alfred Nobel 1973,”</span> n.d.</a>)</span>.
+Actual economies can have large numbers of industries, so <span
+class="math inline">\(\textbf{A}\)</span> often is highly dimensional.
+As a consequence, <span class="math inline">\((\textbf{I} -
+\textbf{A})^{-1}\)</span> usually is solved numerically by computational
+techniques involving Laplace transforms and Lagrange multipliers.</p>
+<p>Taking the difference between the total requirements matrix and the
+direct requirements matrix produces an <em>indirect requirements</em>
+matrix. Indirect requirements are generated from the long string of
+transactions among industries representing intermediate production that
+must occur to generate a final product for consumption. The addition of
+households as both a row and column in <span
+class="math inline">\(\textbf{X}\)</span> allows inclusion of the
+effects of household production and purchasing into the model. This
+addition augments the total requirements matrix to include not only
+direct and indirect requirements but also to show induced effects of
+household spending on the economy as it stimulates purchases of goods
+and services. The difference between the total requirements matrices,
+net of the indirect requirements matrix, including household spending
+produces an <em>induced requirements</em> matrix.</p>
+<h4 id="multipliers">Multipliers</h4>
+<p>Indirect and induced requirements matrices display how each dollar
+spent on goods and services delivered to consumers multiplies itself
+throughout the economy. Ratios between [(direct requirements <span
+class="math inline">\(+\)</span> indirect requirements) <span
+class="math inline">\(/\)</span> direct requirements] as well as ratios
+between [(direct requirements <span class="math inline">\(+\)</span>
+indirect requirements <span class="math inline">\(+\)</span> induced
+requirements) <span class="math inline">\(/\)</span> direct
+requirements] are called <em>Type I</em> and <em>Type II</em>
+multipliers, respectively. Pre–multiplying the direct, indirect, and
+induced requirements matrices by, say, total employment parses the
+impact of delivery of final demand to consumers into direct, indirect,
+and induced employment components. In a similar manner, multipliers for
+other economic indicators – such as economic output, value added,
+income, taxes – can be computed.</p>
+<p>People who commission input-output modeling of potential economic
+impact often are most interested in multipliers to demonstrate that an
+investment of public funds in a project can benefit an entire community.
+For example, an analysis of the potential economic impact of a
+petrochemical manufacturing facility in Beaver County (north of
+Pittsburgh, PA) concludes</p>
+<blockquote>
+<p>…operations will involve approximately 240 to 450 new jobs for Beaver
+County residents at the petrochemical facility. With multipliers, total
+new jobs held by Beaver County residents are anticipated to be between
+777 and 1,444. Annual labor income increases in Beaver County will be
+between approximately $73 and $120 million. Over the 40-year operational
+life of the Project, labor income increases within Beaver County are
+estimated to total between $1.5 and $2.4 billion. Annual value added in
+Beaver County would be between $260 and $846 million. Over the assumed
+40-year operation period, this equates to a present value of $10.3 to
+$16.7 billion.<span class="citation" data-cites="clinton2021a">(<a
+href="#ref-clinton2021a" role="doc-biblioref">Clinton, Minutolo, and
+O’Roark 2021</a>)</span> </p>
+</blockquote>
+<p>This analysis and other assertions about economic impact of operation
+of the petrochemical facility supported state and local tax breaks for
+the developer:</p>
+<blockquote>
+<p>Pennsylvania’s fiscal incentive package — which includes a large tax
+credit along with job-training incentives — was also crucial to the
+company’s decision to both proceed with the project and locate it in
+Pennsylvania, Visser said.</p>
+<p>In 2012, state lawmakers authorized a tax credit for companies that
+use ethane that invest more than $1 billion and employ more than 2,500
+workers during construction. Shell was given a 25-year tax break worth
+about $66 million a year starting in 2017, or about $1.65 billion in
+total. The state also extended a tax-free Keystone Opportunity Zone in
+Beaver County and provided other grants.</p>
+<p>“I can tell you with the hand on my heart that without these fiscal
+incentives, we would not have taken this investment decision,” Visser
+[Royal Dutch Shell representative] said. <span class="citation"
+data-cites="location">(<a href="#ref-location"
+role="doc-biblioref"><span>“Location and Tax Breaks Key to
+Shell<span>’</span>s Pennsylvania Cracker Plant Approval | Reuters
+Events | Downstream,”</span> n.d.</a>)</span></p>
+</blockquote>
+<h3
+id="use-of-counterfactuals-to-identify-potential-economic-impact">Use of
+Counterfactuals to Identify Potential Economic Impact</h3>
+<h4 id="what-is-a-counterfactual">What is a Counterfactual?</h4>
+<p>Input-output modeling is useful for describing of the anatomy and
+physiology of an economy. However, these models also offer a basis for
+simulating economic scenarios that are “counter to the facts” to inform
+risk assessment.</p>
+<p>A <em>counterfactual</em> is a hypothetical scenario that runs
+“counter to the facts” of an existing reality. A counterfactual
+condition entails “What if…?” questions that represent thought
+experiments about propositions that run counter to the facts. For
+instance, how would an economy have grown and changed if an activity or
+event did not occur? How do supply chain constraints or disruptions
+affect an innovation? The potential impact of an activity, event, or
+constraint is the difference between what would have happened with and,
+then, without the activity, event, or constraint.</p>
+<p>Researchers long have used the counterfactual approach to consider
+strategic decisions, decisive acts, and paths of activity that would
+have altered the course of history. For instance, in <em>Ab Urbe Condita
+Libri</em> <span class="citation" data-cites="aburbe1873a">(<a
+href="#ref-aburbe1873a" role="doc-biblioref"><em>Ab urbe condita libri,
+iterum recognovit</em> 1873</a>)</span>,<a href="#fn9"
+class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>
+Titus Livius Patavinus, a Roman historian, contemplated an alternative
+in 4th century BC by questioning, “What would have been the results for
+Rome if she had been engaged in war with Alexander?” Lewis <span
+class="citation" data-cites="lewis1974">(<a href="#ref-lewis1974"
+role="doc-biblioref">Lewis 1974</a>)</span> indicated that the modern
+counterfactual approach goes back at least to the 18th century Scottish
+Enlightenment philosopher David Hume.</p>
+<p>Historians, essayists, and novelists have applied counterfactual
+thinking productively in a variety of situations. For instance, in 1931
+Winston Churchill wrote an essay, “If Lee Had Not Won the Battle of
+Gettysburg,” <span class="citation" data-cites="churchill2014">(<a
+href="#ref-churchill2014" role="doc-biblioref">Churchill
+2014</a>)</span> that examined the counterfactual viewpoint about what
+would have happened if the Confederacy had won the American Civil War<a
+href="#fn10" class="footnote-ref" id="fnref10"
+role="doc-noteref"><sup>10</sup></a> (see counterfactual examples
+regarding the American Civil War <span class="citation"
+data-cites="lewis1931">(<a href="#ref-lewis1931"
+role="doc-biblioref">Lewis 1931</a>)</span>). In 1962, Philip K. Dick, a
+novelist in the science fiction genre, published <em>The Man in the High
+Castle</em> <span class="citation" data-cites="dick1962">(<a
+href="#ref-dick1962" role="doc-biblioref">Dick 1962</a>)</span>, a
+narrative of a thought experiment that considered the consequences if
+Nazi Germany and Imperial Japan had won the Second World War.</p>
+<h4
+id="constructing-counterfactuals-within-input-output-modeling">Constructing
+Counterfactuals Within Input-Output Modeling</h4>
+<p>Input–output modeling can help examine counterfactuals. The typical
+way to conduct such a counterfactual approach is to construct and
+compare two economic scenarios. The first scenario contains a possible
+alteration in the economy – the counterfactual – that would be
+identified in input-output terms an economic changes resulting from,
+say, an innovation (e.g., a new production process), event (e.g., a
+disaster), policy (e.g. immigration regulation), or financial rule
+(e.g., taxing authority). A second scenario merely maintains the “status
+quo” of the economy under the assumption that the economy simply grows
+and changes consistently according to historical trends. The difference
+between the first and the second scenarios is the potential economic
+impact of the economic alteration specified in the first scenario.</p>
+<p>The results of such counterfactual economic analyses are not economic
+forecasts. Rather, such analyses isolate the importance only of one
+narrow group of changes in an economy by showing the gross effect of
+these changes rather that the effect of changes net of all other
+potential changes taken together that could affect an economy. A
+counterfactual used with input–output methods typically is specified
+under the assumption of <em>ceteris paribus</em> – that is, with the
+assumption of “all other things remaining the same” or, as is much more
+restrictively used in physics and other sciences <span class="citation"
+data-cites="cartwright1980">(<a href="#ref-cartwright1980"
+role="doc-biblioref">Cartwright 1980</a>)</span>, “if, and only if, all
+other things are the same <em>and</em> correct” More restrictively,
+<em>ceteris absentibus</em>, a term meaning literally “others absent,”
+probably best describes the approach for economic counterfactuals <span
+class="citation" data-cites="joseph1980">(<a href="#ref-joseph1980"
+role="doc-biblioref">Joseph 1980</a>)</span>.</p>
+<h4 id="an-example-of-a-counterfactual-specification">An Example of a
+Counterfactual Specification</h4>
+<p>A potential impact of a counterfactual is computed by calculating the
+difference between (a) an economic scenario created by a counterfactual
+condition exemplifying a production or consumption shock and (b) a
+status quo scenario representing an economy anticipated under historical
+trends in growth and change. Shown in Table 1 are three classes of
+counterfactuals that are possible in a hypothetical case for the
+production and consumption of <em>transparent aluminum</em>, a material
+I introduce only to offer an example of the structure of potential
+counterfactuals in input-output analysis.</p>
+<p>Table 1. <em>Three hypothetical macroeconomic counterfactuals
+specified to assess risk to production and consumption of transparent
+aluminum</em></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Counterfactual description</strong></th>
+<th><strong>Change specified in macroeconomic model</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Change in consumption of transparent aluminum</td>
+<td><span class="math inline">\(\Delta y_{i&#39;}\)</span>, where
+element <span class="math inline">\(y_{i&#39;}\)</span>, is total final
+demand for industry <span class="math inline">\(i&#39;\)</span>, the
+transparent aluminum industry (where <span
+class="math inline">\(i&#39;\subseteq I\)</span>).</td>
+</tr>
+<tr class="even">
+<td>Change in production function for the transparent aluminum
+industry</td>
+<td><span class="math inline">\(\Delta a_{j&#39;}\)</span>, where vector
+<span class="math inline">\(a_{j&#39;}\)</span> is a column vector
+representing the proportion of inputs from <span
+class="math inline">\(I\)</span> industries purchased as inputs to the
+transparent aluminum industry (where <span
+class="math inline">\(j&#39;\subseteq J\)</span>).</td>
+</tr>
+<tr class="odd">
+<td>Change in production function of a purchaser of transparent
+aluminum</td>
+<td><span class="math inline">\(\Delta a_{j}\)</span>, where vector
+<span class="math inline">\(a_{j}\)</span> is a column vector
+representing the proportion of inputs from <span
+class="math inline">\(I\)</span> industries purchased as inputs to any
+industry <em>other than</em> the transparent aluminum industry (where
+<span class="math inline">\(j&#39; ≠ j\)</span>).</td>
+</tr>
+</tbody>
+</table>
+<p>Transparent aluminum, a ceramic composite technically known as
+<em>aluminum magnesium oxynitride</em>, is an extremely durable,
+sintered crystalline material composed of magnesium, aluminum, oxygen,
+and nitrogen (<em>AlN-MgO-MgAl2O4</em>) that is optically transparent
+(≥80%) in the near-ultraviolet, visible, and midwave-infrared regions of
+the electromagnetic spectrum. The name of this material comes from its
+similarity to a material referenced in the science fiction movie,
+<em>Star Trek IV: The Voyage Home</em>.<a href="#fn11"
+class="footnote-ref" id="fnref11"
+role="doc-noteref"><sup>11</sup></a></p>
+<p>Transparent aluminum is a promising material that is four times
+harder than fused silica glass, 85% as hard as sapphire, and resists
+corrosion, radiation, and oxidation <span class="citation"
+data-cites="nishiyama2017">(<a href="#ref-nishiyama2017"
+role="doc-biblioref">Nishiyama et al. 2017</a>)</span>. Products
+requiring both durability and transparency – such as armored glass,
+windshields on airplanes and sea vessels, windows for laser and infrared
+communications, personal protective gear, smartphone and watch screens,
+and sensor components – are among the potential uses for transparent
+aluminum.</p>
+<h5 id="change-in-consumption-of-transparent-aluminum">Change in
+consumption of transparent aluminum</h5>
+<p>Using equation (3), implementing this counterfactual involves
+substitution of <span class="math inline">\(y_{i&#39;}\)</span> for
+<span class="math inline">\(y_{i}\)</span> and solving for <span
+class="math inline">\((\textbf{x}=(\textbf{I} -
+\textbf{A})^{-1}\textbf{y&#39;}\)</span>, where <span
+class="math inline">\(y&#39;\)</span> is a new column vector of total
+final demand for industry <span class="math inline">\(i&#39;\)</span>,
+the transparent aluminum industry (<span
+class="math inline">\(i&#39;\subseteq I\)</span>). The result is a
+direct change in transparent aluminum output, along with indirect and
+induced changes of the total output of all industries to the extent that
+they have direct or indirect interindustry linkages to the transparent
+aluminum industry.</p>
+<h5
+id="change-in-production-function-for-the-transparent-aluminum-industry">Change
+in production function for the transparent aluminum industry</h5>
+<p>Changing a production function involves altering the proportion of
+total products from other industries purchased by the transparent
+aluminium industry. This change could result from efficiencies affected
+in the production of transparent aluminium. Or, supply chain constraints
+or shortages might have required changes in the manner that transparent
+aluminium is produced. Such a change is manifest in alterations in <span
+class="math inline">\(\textbf{A}\)</span>. As a result, <span
+class="math inline">\((\textbf{x}=(\textbf{I} -
+\textbf{A})^{-1}\)</span> also is altered, reestablishing the
+input-output identity to <span
+class="math inline">\((\textbf{x}=(\textbf{I} -
+\textbf{A&#39;})^{-1}\textbf{y}\)</span> where <span
+class="math inline">\(\textbf{A&#39;}\)</span> is <span
+class="math inline">\(\textbf{A}\)</span> altered by <span
+class="math inline">\(a_{j&#39;}\)</span>, a column vector representing
+the proportion of inputs from <span class="math inline">\(I\)</span>
+industries purchased as inputs to the transparent aluminum industry
+(<span class="math inline">\(j&#39;\subseteq J\)</span>). The result
+observed, holding transparent aluminum output constant, is indirect and
+induced changes of the total output of all industries to the extent that
+they have direct or indirect interindustry linkages to the transparent
+aluminum industry.</p>
+<h5
+id="change-in-production-function-of-a-purchaser-of-transparent-aluminium">Change
+in production function of a purchaser of transparent aluminium</h5>
+<p>The consequence of this scenario is a similar change similar to
+changes in the production function for the transparent aluminum
+industry. However, the result observed, holding output constant in the
+industry making the production function change, is indirect and induced
+changes of the total output of all industries, including the transparent
+aluminum industry, to the extent that they have direct or indirect
+interindustry linkages to the industry making the production function
+change.</p>
+<h3
+id="selected-software-and-systems-for-input-output-modeling">Selected
+Software and Systems for Input-Output Modeling</h3>
+<p>Many software and systems are available to analyze input-output data
+from the national income and product accounts of the United States (viz
+description of accounts by the Bureau of Economic Analysis of the U.S.
+Department of Commerce <span class="citation"
+data-cites="anintro2007">(<a href="#ref-anintro2007"
+role="doc-biblioref"><span>“An Introduction to the National Income and
+Product Accounts”</span> 2007</a>)</span>. Three prominent sets of
+software and systems are <em>IMPLAN</em>, <em>RIMS II</em>, and
+<em>IO-Snap</em>.</p>
+<h4 id="implan">IMPLAN</h4>
+<p><a href="https://implan.com">IMPLAN</a> (<em>IM</em>pact for
+<em>PL</em>anning and <em>AN</em>alysis) is a prominent example of
+software used estimate the direct, indirect, and induced impacts in
+regional economies. The IMPLAN economic impact modeling system consists
+of software tools and region–specific data to enable in–depth
+examinations of state, multi–county, county, sub–county, and
+metropolitan regional economies. IMPLAN seems to have a large share of
+the market for input-output modeling. Some writers (e.g., <span
+class="citation" data-cites="vowels2012a">(<a href="#ref-vowels2012a"
+role="doc-biblioref">Vowels 2012</a>)</span> ) describe IMPLAN as the
+“gold standard” for input-output analysis.</p>
+<h4 id="rims-ii">RIMS II</h4>
+<p><a
+href="https://www.bea.gov/resources/methodologies/RIMSII-user-guide">RIMS
+II</a> is a product of the Bureau of Economic Analysis of the U.S.
+Department of Commerce that is based on a set of national input-output
+accounts showing the goods and services produced by each industry and
+the use of these goods and services by industries and final users.</p>
+<h4 id="io-snap">IO-Snap</h4>
+<p><a href="https://www.io-snap.com/">IO-Snap</a> is a software
+application that includes all aspects of fundamental input-output
+analyses. Data can be edited and displayed in a variety of formats and
+compared and contrasted across geographical definitions at different
+times.</p>
+<h2 class="appendix" id="last-updated-on">Last updated on</h2>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>[1] &quot;2022-04-22 07:43:38 EDT&quot;</code></pre>
+</div>
+<h2 class="appendix" id="reuse">Reuse</h2>
+<p>Text and figures are licensed under Creative Commons Attribution <a
+href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY 4.0</a>.
+Source code is available at <a
+href="https://github.com/davidpassmore/blog"
+class="uri">https://github.com/davidpassmore/blog</a>, unless otherwise
+noted. The figures that have been reused from other sources do not fall
+under this license and are recognized by footnoted text: “Figure from
+…”.</p>
+<h2 class="appendix" id="commentscorrections">Comments/Corrections</h2>
+<p>To make comments about this posting or to suggest changes or
+corrections, send email to <a href="mailto:dlp@davidpassmore.net">David
+Passmore</a>, send a direct message on Twitter at <a
+href="https://twitter.com/dlppassmore">@DLPPassmore</a>, or send an IMsg
+or SMS to <a href="mailto:dlp@psu.edu"
+class="email">dlp@psu.edu</a>.</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div id="refs" class="references csl-bib-body hanging-indent"
+role="doc-bibliography">
+<div id="ref-aburbe1873a" class="csl-entry" role="doc-biblioentry">
+<em>Ab urbe condita libri, iterum recognovit</em>. 1873. Lipsiae,
+Teubner. <a
+href="http://archive.org/details/aburbeconditali08livygoog">http://archive.org/details/aburbeconditali08livygoog</a>.
+</div>
+<div id="ref-anintro2007" class="csl-entry" role="doc-biblioentry">
+<span>“An Introduction to the National Income and Product
+Accounts.”</span> 2007. Washington, DC. <a
+href="https://www.bea.gov/resources/methodologies/mp1">https://www.bea.gov/resources/methodologies/mp1</a>.
+</div>
+<div id="ref-bastiat1964" class="csl-entry" role="doc-biblioentry">
+Bastiat, Frédéric. 1964. <em>Selected Essays on Political Economy.
+Translated by Seymour Cain and Edited by George B. De Huszar</em>.
+Seymour Cain and edited by George B. de Huszar. Van Nostrand.
+</div>
+<div id="ref-cartwright1980" class="csl-entry" role="doc-biblioentry">
+Cartwright, Nancy. 1980. <span>“The Truth Doesn’t Explain Much.”</span>
+<em>American Philosophical Quarterly</em> 17 (2): 159–63. <a
+href="https://www.jstor.org/stable/20013859">https://www.jstor.org/stable/20013859</a>.
+</div>
+<div id="ref-churchill2014" class="csl-entry" role="doc-biblioentry">
+Churchill, Winston. 2014. <span>“<span>"</span>If Lee Had Not Won the
+Battle of Gettysburg<span>"</span>.”</span> <a
+href="https://winstonchurchill.org/publications/finest-hour-extras/qif-lee-had-not-won-the-battle-of-gettysburgq/">https://winstonchurchill.org/publications/finest-hour-extras/qif-lee-had-not-won-the-battle-of-gettysburgq/</a>.
+</div>
+<div id="ref-clinton2021a" class="csl-entry" role="doc-biblioentry">
+Clinton, Steven, Marcel C Minutolo, and Brian O’Roark. 2021.
+<span>“Updated Economic Impact Analysis: Petrochemical Facility in
+Beaver County, Pennsylvania.”</span> Pittsburgh, Pennsylvania. <a
+href="https://www.rmu.edu/sites/default/files/user_files/Project_Franklin_Economic_Impact_Study_FINAL.pdf">https://www.rmu.edu/sites/default/files/user_files/Project_Franklin_Economic_Impact_Study_FINAL.pdf</a>.
+</div>
+<div id="ref-dick1962" class="csl-entry" role="doc-biblioentry">
+Dick, P. 1962. <em>The Man in the High Castle</em>. New York: Random
+House.
+</div>
+<div id="ref-economic2017" class="csl-entry" role="doc-biblioentry">
+<span>“Economic Impact Studies: The Missing Ingredient Is
+Economics.”</span> 2017a. <a
+href="https://www.johnlocke.org/research/economic-impact-studies-the-missing-ingredient-is-economics/">https://www.johnlocke.org/research/economic-impact-studies-the-missing-ingredient-is-economics/</a>.
+</div>
+<div id="ref-economic2017a" class="csl-entry" role="doc-biblioentry">
+———. 2017b. <a
+href="https://www.johnlocke.org/research/economic-impact-studies-the-missing-ingredient-is-economics/">https://www.johnlocke.org/research/economic-impact-studies-the-missing-ingredient-is-economics/</a>.
+</div>
+<div id="ref-goldman1965" class="csl-entry" role="doc-biblioentry">
+Goldman, Morris R. 1965. <span>“The 1958 Input-Output Study in Analysis
+and Forecasting.”</span> <em>Business Economics</em> 1 (1): 32–34. <a
+href="https://www.jstor.org/stable/23480225">https://www.jstor.org/stable/23480225</a>.
+</div>
+<div id="ref-grossdo" class="csl-entry" role="doc-biblioentry">
+<span>“Gross Domestic Product | u.s. Bureau of Economic Analysis
+(BEA).”</span> n.d. <a
+href="https://www.bea.gov/resources/learning-center/what-to-know-gdp">https://www.bea.gov/resources/learning-center/what-to-know-gdp</a>.
+</div>
+<div id="ref-joseph1980" class="csl-entry" role="doc-biblioentry">
+Joseph, Geoffrey. 1980. <span>“The Many Sciences and the One
+World.”</span> <em>The Journal of Philosophy</em> 77 (12): 773–91. <a
+href="https://doi.org/10.2307/2025803">https://doi.org/10.2307/2025803</a>.
+</div>
+<div id="ref-vanleeuwen2005" class="csl-entry" role="doc-biblioentry">
+Leeuwen, Eveline S. van, Peter Nijkamp, and Piet Rietveld. 2005.
+<span>“Regional Input<span></span>Output Analysis.”</span> In, edited by
+Kimberly Kempf-Leonard, 317–23. New York: Elsevier. <a
+href="https://doi.org/10.1016/B0-12-369398-5/00349-2">https://doi.org/10.1016/B0-12-369398-5/00349-2</a>.
+</div>
+<div id="ref-leontief1936a" class="csl-entry" role="doc-biblioentry">
+Leontief, Wassily. 1936. <span>“Quantitative Input and Output Relations
+in the Economic Systems of the United States.”</span> <em>The Review of
+Economics and Statistics</em> 18 (3): 105–25. <a
+href="https://doi.org/10.2307/1927837">https://doi.org/10.2307/1927837</a>.
+</div>
+<div id="ref-leontief1966c" class="csl-entry" role="doc-biblioentry">
+———. 1966. <em>Input-Output Economics</em>. New York: Oxford University
+Press.
+</div>
+<div id="ref-lewis1931" class="csl-entry" role="doc-biblioentry">
+Lewis, David. 1931. <em>If It Had Happened Otherwise</em>. London:
+Longman.
+</div>
+<div id="ref-lewis1974" class="csl-entry" role="doc-biblioentry">
+———. 1974. <span>“Causation.”</span> <em>The Journal of Philosophy</em>
+70 (17): 556–67. <a
+href="https://doi.org/10.2307/2025310">https://doi.org/10.2307/2025310</a>.
+</div>
+<div id="ref-location" class="csl-entry" role="doc-biblioentry">
+<span>“Location and Tax Breaks Key to Shell<span>’</span>s Pennsylvania
+Cracker Plant Approval | Reuters Events | Downstream.”</span> n.d. <a
+href="https://www.reutersevents.com/downstream/engineering-and-construction/location-and-tax-breaks-key-shells-pennsylvania-cracker-plant-approval">https://www.reutersevents.com/downstream/engineering-and-construction/location-and-tax-breaks-key-shells-pennsylvania-cracker-plant-approval</a>.
+</div>
+<div id="ref-miernyk1965" class="csl-entry" role="doc-biblioentry">
+Miernyk, William. 1965. <em>The Elements of Input-Output Analysis</em>.
+Morgantown, West Virginia: Regional Research Institute at The Research
+Repositoryat West Virginia University. <a
+href="https://researchrepository.wvu.edu/rri-web-book">https://researchrepository.wvu.edu/rri-web-book</a>.
+</div>
+<div id="ref-naicscoa" class="csl-entry" role="doc-biblioentry">
+<span>“NAICS Code: 311119 Other Animal Food Manufacturing.”</span> n.d.
+<a
+href="https://www.naics.com/naics-code-description/?code=311119">https://www.naics.com/naics-code-description/?code=311119</a>.
+</div>
+<div id="ref-naicsco" class="csl-entry" role="doc-biblioentry">
+<span>“NAICS Code: 325193 Ethyl Alcohol Manufacturing.”</span> n.d. <a
+href="https://www.naics.com/naics-code-description/?code=325193">https://www.naics.com/naics-code-description/?code=325193</a>.
+</div>
+<div id="ref-nishiyama2017" class="csl-entry" role="doc-biblioentry">
+Nishiyama, Norimasa, Ryo Ishikawa, Hiroaki Ohfuji, Hauke Marquardt,
+Alexander Kurnosov, Takashi Taniguchi, Byung-Nam Kim, et al. 2017.
+<span>“Transparent Polycrystalline Cubic Silicon Nitride.”</span>
+<em>Scientific Reports</em> 7 (1): 44755. <a
+href="https://doi.org/10.1038/srep44755">https://doi.org/10.1038/srep44755</a>.
+</div>
+<div id="ref-northam" class="csl-entry" role="doc-biblioentry">
+<span>“North American Industry Classification System (NAICS) u.s. Census
+Bureau.”</span> n.d. <a
+href="https://www.census.gov/naics/">https://www.census.gov/naics/</a>.
+</div>
+<div id="ref-regional" class="csl-entry" role="doc-biblioentry">
+<span>“Regional Input-Output Modeling System (RIMS II) User’s Guide |
+u.s. Bureau of Economic Analysis (BEA).”</span> n.d. <a
+href="https://www.bea.gov/resources/methodologies/RIMSII-user-guide">https://www.bea.gov/resources/methodologies/RIMSII-user-guide</a>.
+</div>
+<div id="ref-sanders2015" class="csl-entry" role="doc-biblioentry">
+Sanders, Jon. 2015. <span>“Nonsense with Big Numbers: How to Get
+Legislators to Support Your Industry.”</span> <a
+href="https://www.johnlocke.org/nonsense-with-big-numbers-how-to-get-legislators-to-support-your-industry/">https://www.johnlocke.org/nonsense-with-big-numbers-how-to-get-legislators-to-support-your-industry/</a>.
+</div>
+<div id="ref-thesver" class="csl-entry" role="doc-biblioentry">
+<span>“The Sveriges Riksbank Prize in Economic Sciences in Memory of
+Alfred Nobel 1973.”</span> n.d. <a
+href="https://www.nobelprize.org/prizes/economic-sciences/1973/summary/">https://www.nobelprize.org/prizes/economic-sciences/1973/summary/</a>.
+</div>
+<div id="ref-vowels2012a" class="csl-entry" role="doc-biblioentry">
+Vowels, Scott. 2012. <span>“The Economic Impact of NCMSDC Certified
+Minority Businesses on Northern California.”</span> Oakland, California.
+<a
+href="http://wrmsdc.org/wp-content/uploads/2020/07/EconomicImpactStudySummary.pdf">http://wrmsdc.org/wp-content/uploads/2020/07/EconomicImpactStudySummary.pdf</a>.
+</div>
+<div id="ref-weisz2006" class="csl-entry" role="doc-biblioentry">
+Weisz, Helga, and Faye Duchin. 2006. <span>“Physical and Monetary
+Input<span></span>output Analysis: What Makes the Difference?”</span>
+<em>Ecological Economics</em> 57 (3): 534–41. <a
+href="https://doi.org/10.1016/j.ecolecon.2005.05.011">https://doi.org/10.1016/j.ecolecon.2005.05.011</a>.
+</div>
+</div>
+<section class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>I am not pretending to advance an
+original or new conception of input-output modeling. Many competent
+descriptions of this model are evident on the Internet and extant
+scholarly literature. Frankly, I wrote this posting for more personal
+reasons: I abide by the apothegm that a person knows nothing about a
+topic until that person had to write about it.<a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>Although the notation seems awkward
+to have an element of matrix <span
+class="math inline">\(\textbf{X}\)</span> indicated by what would appear
+to most to be the scalar <span class="math inline">\(x\)</span> and the
+column vector of total output indicated by <span
+class="math inline">\(\textbf{x}\)</span>, I am following notation
+conventions that are common in specifications of the mathematical
+properties of input-output modeling.<a href="#fnref2"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>And to most economic analysis that
+uses public data to focuses on industry attributes.<a href="#fnref3"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4" role="doc-endnote"><p>If employees normally do not work at
+a single physical location, the establishment is identified by the main
+office that supervises employees’ activities or is the base at which
+employees carry out these activities. <a href="#fnref4"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5" role="doc-endnote"><p>Wheat, barley, corn, sorghum, or
+cereals containing 55%-70% starch.<a href="#fnref5"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6" role="doc-endnote"><p><em>The North American Industry
+Classification System</em> (NAICS) is the standard used by Federal
+statistical agencies in classifying business establishments for the
+purpose of collecting, analyzing, and publishing statistical data
+related to the U.S. business economy <span class="citation"
+data-cites="northam">(<a href="#ref-northam"
+role="doc-biblioref"><span>“North American Industry Classification
+System (NAICS) u.s. Census Bureau,”</span> n.d.</a>)</span>.<a
+href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7" role="doc-endnote"><p>A <em>co-product</em>, a desirable
+secondary good that is generated during the manufacturing process and
+can be sold or reused profitably, is different than a
+<em>by-product</em>, a material of value that is produced as a residual
+of, or incidental to, the production process. Generally, co-products
+generate revenue; by-products are associated with costs.<a
+href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8" role="doc-endnote"><p><sup>-1</sup> refers to an inverse of
+a matrix, not a reciprocal.<a href="#fnref8" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn9" role="doc-endnote"><p>Book digitized by Google from the
+library of the University of Michigan and uploaded to the Internet
+Archive by user tpb.; 5 volumes 20 cm; Pars 1. liber I-VI. – pars 2.
+liber VII-XXIII. – pars 3. liber XXIV-XXX. – pars 4. liber XXXI-XXXVIII.
+– pars 5. liber XXXIX-XLV. Epitom. lib. XLVI-CXL. – pars 6. Fragmenta et
+Index<a href="#fnref9" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn10" role="doc-endnote"><p>If Churchill’s title seems like a
+non sequitur, refer to the explanation of his rhetoric at <a
+href="http://www.troynovant.com/Franson/Churchill/If-Lee-Not-Won-Gettysburg.html"
+class="uri">http://www.troynovant.com/Franson/Churchill/If-Lee-Not-Won-Gettysburg.html</a>.<a
+href="#fnref10" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn11" role="doc-endnote"><p>Kirk and the Enterprise crew must
+save the whales to, in turn, save planet Earth. They must contain the
+whales in water on the Enterprise. The crew travels back in time to 20th
+Century Earth, when transparent aluminum had not been invented yet.
+Scott, the Enterprise’s chief engineer, shares the formula for
+transparent aluminum with a 20th Century scientist so that the
+Enterprise could be outfit with the material crucial to building tanks
+for the whales.I dunno…it’s supposed to be one of the light-hearted
+<em>Star Trek</em> movies.<a href="#fnref11" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+<!--radix_placeholder_article_footer-->
+<div class="article-footer">
+  <p class="social_footer">
+    <span class="article-sharing">
+      Share: &nbsp;
+      <a href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fdavidpassmore.github.io%2Fblog%2Fop%2F2022-04-04-repoimplan%2F" aria-label="share on facebook">
+        <i class="fab fa-facebook" aria-hidden="true"></i>
+      </a>
+      <a href="https://twitter.com/share?text=understanding%20input-output%20modeling%20for%20assessing%20potential%20economic%20impact&amp;url=https%3A%2F%2Fdavidpassmore.github.io%2Fblog%2Fop%2F2022-04-04-repoimplan%2F" aria-label="share on twitter">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fdavidpassmore.github.io%2Fblog%2Fop%2F2022-04-04-repoimplan%2F&amp;title=understanding%20input-output%20modeling%20for%20assessing%20potential%20economic%20impact" aria-label="share on linkedin">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+    </span>
+  </p>
+</div>
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom">
+  <h3 id="references">References</h3>
+  <div id="references-listing"></div>
+  <h3 id="citation">Citation</h3>
+  <p>For attribution, please cite this work as</p>
+  <pre class="citation-appendix short">Passmore (2022, April 12). NOTES FROM PITTSBURGH: understanding input-output modeling for assessing potential economic impact. Retrieved from https://davidpassmore.github.io/blog/op/2022-04-04-repoimplan/</pre>
+  <p>BibTeX citation</p>
+  <pre class="citation-appendix long">@misc{passmore2022understanding,
+  author = {Passmore, David L.},
+  title = {NOTES FROM PITTSBURGH: understanding input-output modeling for assessing potential economic impact},
+  url = {https://davidpassmore.github.io/blog/op/2022-04-04-repoimplan/},
+  year = {2022}
+}</pre>
+</div>
+<!--/radix_placeholder_appendices-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!--radix_placeholder_navigation_after_body--><html><body>
+<div class="distill-site-nav distill-site-footer">
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://davidpassmore.github.io/blog/">NOTES FROM PITTSBURGH</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://davidpassmore.github.io/blog/me.html">David L. Passmore</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Creative Commons Attribution-ShareAlike 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
+<p></p>
+<p>Follow David Passmore
+<a href="https://www.threads.net/@dlppassmore" target="_blank" title="Passmore Threads">@DLPPassmore</a>
+on
+<a href="https://www.threads.com" target="_blank" title="Threads home page">Threads</a></p>
+</div>
+<!--/radix_placeholder_navigation_after_body-->
+</body></html>
+
+
+</body>
+
+</html>
