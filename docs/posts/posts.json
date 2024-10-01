@@ -5,7 +5,7 @@
     "description": "Welcome to our new blog, My Blog. We hope you enjoy \nreading what we have to say!",
     "author": [
       {
-        "name": "Nora Jones",
+        "name": "David Passmore",
         "url": "https://example.com/norajones"
       }
     ],
@@ -13,7 +13,7 @@
     "categories": [],
     "contents": "\n\n\n\n",
     "preview": {},
-    "last_modified": "2024-10-01T15:43:35-04:00",
+    "last_modified": "2024-10-01T16:01:49-04:00",
     "input_file": {}
   }
 ]
