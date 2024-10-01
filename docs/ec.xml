@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>NOTES FROM PITTSBURGH</title>
+    <link>https://davidpassmore.github.io/blog/</link>
+    <atom:link href="https://davidpassmore.github.io/blog/ec.xml" rel="self" type="application/rss+xml"/>
+    <description>NOTES from David L. Passmore, Pittsburgh, Pennsylvania USA
+</description>
+    <generator>Distill</generator>
+    <lastBuildDate>Wed, 10 Aug 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>from the record -- what PA state senators said about the PA Petrochemicals Complex during legislative sessions </title>
+      <dc:creator>David L. Passmore</dc:creator>
+      <link>https://davidpassmore.github.io/blog/ec/2022-08-01-legrep2012</link>
+      <description>Transcribed from legislative sessions in 2012, 2013, 2014, and 2019 of the Senate of the Pennsylvania General Assembly</description>
+      <category>Act 16</category>
+      <category>Act 85</category>
+      <category>Beaver County, Pennsylvania</category>
+      <category>ethane</category>
+      <category>ethane cracker</category>
+      <category>ethylene</category>
+      <category>Pennsylvania legislature</category>
+      <category>Pennsylvania Petrochemicals Complex</category>
+      <category>Shell Chemical Appalachia LLC</category>
+      <category>Shell, plc</category>
+      <category>tax expenditures</category>
+      <guid>https://davidpassmore.github.io/blog/ec/2022-08-01-legrep2012</guid>
+      <pubDate>Wed, 10 Aug 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://davidpassmore.github.io/blog/ec/2022-08-01-legrep2012/legjourn.png" medium="image" type="image/png" width="1136" height="340"/>
+    </item>
+    <item>
+      <title>North-Central Pennsylvania is the capital of powder metallurgy parts manufacturing</title>
+      <dc:creator>David L. Passmore</dc:creator>
+      <link>https://davidpassmore.github.io/blog/ec/2022-07-31-powder</link>
+      <description>The powder metallurgy parts manufacturing industry is a significant part of the history of the economy and technology of Pennsylvania and is highly concentrated in north-central Pennsylvania.</description>
+      <guid>https://davidpassmore.github.io/blog/ec/2022-07-31-powder</guid>
+      <pubDate>Fri, 05 Aug 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://davidpassmore.github.io/blog/ec/2022-07-31-powder/ConvPM.png" medium="image" type="image/png" width="640" height="392"/>
+    </item>
+    <item>
+      <title>want to take a pay cut?</title>
+      <dc:creator>David L. Passmore</dc:creator>
+      <link>https://davidpassmore.github.io/blog/ec/2022-06-30-paycut</link>
+      <description>Are you willing to accept a pay cut if an employer promises to make better work by applying technology to your job?</description>
+      <category>artificial intelligence</category>
+      <category>automation</category>
+      <category>job changing</category>
+      <category>job retention</category>
+      <category>labor markets</category>
+      <category>robotics</category>
+      <category>subjective utility</category>
+      <category>technology at work</category>
+      <category>The Great Resignation</category>
+      <category>The Great Reshuffle</category>
+      <category>wages</category>
+      <guid>https://davidpassmore.github.io/blog/ec/2022-06-30-paycut</guid>
+      <pubDate>Mon, 04 Jul 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://davidpassmore.github.io/blog/ec/2022-06-30-paycut/cut.png" medium="image" type="image/png" width="788" height="561"/>
+    </item>
+    <item>
+      <title>questions remain about potential economic impact of soon-to-open Pennsylvania Petrochemicals Complex</title>
+      <dc:creator>David L. Passmore</dc:creator>
+      <link>https://davidpassmore.github.io/blog/ec/2022-04-26-robertm</link>
+      <description>Plastic resin almost is ready to flow. Tax expenditures by the Commonwealth are contributing. Potential regional economic impact is questioned.</description>
+      <guid>https://davidpassmore.github.io/blog/ec/2022-04-26-robertm</guid>
+      <pubDate>Mon, 27 Jun 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://davidpassmore.github.io/blog/ec/2022-04-26-robertm/plant.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>questions about the Pennsylvania Petrochemicals Complex....have answers? or, even more questions?</title>
+      <dc:creator>David L. Passmore</dc:creator>
+      <link>https://davidpassmore.github.io/blog/ec/2022-04-19-questions</link>
+      <description>I request your answers to my questions -- for which I personally have no, or perhaps malformed, answers -- about the Pennsylvania Petrochemicals Complex in Monaca, Pennsylvania.</description>
+      <category>ethane cracker</category>
+      <category>natural gas liquids</category>
+      <category>shell public liability company</category>
+      <category>ethylene</category>
+      <category>polymerization</category>
+      <category>plastic resin</category>
+      <category>Beaver County, Pennsylvania</category>
+      <guid>https://davidpassmore.github.io/blog/ec/2022-04-19-questions</guid>
+      <pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://davidpassmore.github.io/blog/ec/2022-04-19-questions/LNG-04a.jpeg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>report forecasts substantial 40-year economic impact of ethane cracking in Monaca, PA</title>
+      <dc:creator>David L. Passmore</dc:creator>
+      <link>https://davidpassmore.github.io/blog/ec/2022-03-28-ethanecracker</link>
+      <description>An ethane cracker under construction by Shell, a UK public limited company, in Monaca, Pennsylvania, is nearing completion. What a report from Robert Morris University says about the cracker's anticipated impact....</description>
+      <category>natural gas liquids</category>
+      <category>environment</category>
+      <category>ethane cracker</category>
+      <category>economic impact</category>
+      <category>Beaver County, Pennsylvania</category>
+      <category>Potter Township, Pennsylvania</category>
+      <category>Shell, PLC</category>
+      <guid>https://davidpassmore.github.io/blog/ec/2022-03-28-ethanecracker</guid>
+      <pubDate>Mon, 28 Mar 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://davidpassmore.github.io/blog/ec/2022-03-28-ethanecracker/ethane_cracker.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>transportation, inflation, &amp; the supply chain</title>
+      <dc:creator>David L. Passmore</dc:creator>
+      <link>https://davidpassmore.github.io/blog/ec/2022-07-06-oilinf</link>
+      <description>A report from a webinar presented by Regional Economic Models, Inc.</description>
+      <category>deflation</category>
+      <category>inflation</category>
+      <category>oil prices</category>
+      <category>transportation</category>
+      <guid>https://davidpassmore.github.io/blog/ec/2022-07-06-oilinf</guid>
+      <pubDate>Tue, 22 Mar 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://davidpassmore.github.io/blog/ec/2022-07-06-oilinf/supch.jpeg" medium="image" type="image/jpeg"/>
+    </item>
+  </channel>
+</rss>
