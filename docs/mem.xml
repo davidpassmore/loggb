@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>NOTES FROM PITTSBURGH</title>
+    <link>https://davidpassmore.github.io/blog/</link>
+    <atom:link href="https://davidpassmore.github.io/blog/mem.xml" rel="self" type="application/rss+xml"/>
+    <description>NOTES from David L. Passmore, Pittsburgh, Pennsylvania USA
+</description>
+    <generator>Distill</generator>
+    <lastBuildDate>Wed, 28 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>*Situation in Ukraine in Early 2024:* Background Information and a Conversation with Former U.S. Ambassador to Pakistan &amp; Poland, Thomas Simons</title>
+      <dc:creator>David L. Passmore</dc:creator>
+      <link>https://davidpassmore.github.io/blog/mem/2024-09-04-ukraine</link>
+      <description>Provided in this site are notes and links to readings and analyses assembled for a February 28, 2024 meeting in a Zoom videoconference about the situation in Ukraine with former Ambassador Thomas W. Simons, Jr., a former U.S. Ambassador to Poland from 1990 to 1993 and Ambassador to Pakistan from 1996 to 1998.</description>
+      <guid>https://davidpassmore.github.io/blog/mem/2024-09-04-ukraine</guid>
+      <pubDate>Wed, 28 Feb 2024 00:00:00 +0000</pubDate>
+      <media:content url="https://davidpassmore.github.io/blog/mem/2024-09-04-ukraine/TWSimons.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Challenges Facing Taiwan: A Conversation</title>
+      <dc:creator>David L. Passmore</dc:creator>
+      <link>https://davidpassmore.github.io/blog/mem/2024-09-18-taiwan</link>
+      <description>Notes and links to readings and analyses are assembled to provide background for a January 20, 2024 meeting held in a Zoom videoconference about challenges facing Taiwan. A guest from Taiwan participated in the meeting.</description>
+      <guid>https://davidpassmore.github.io/blog/mem/2024-09-18-taiwan</guid>
+      <pubDate>Sat, 20 Jan 2024 00:00:00 +0000</pubDate>
+      <media:content url="https://davidpassmore.github.io/blog/mem/2024-09-18-taiwan/taiwan.jpg" medium="image" type="image/jpeg"/>
+    </item>
+  </channel>
+</rss>
